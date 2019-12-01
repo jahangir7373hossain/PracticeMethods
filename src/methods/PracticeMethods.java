@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.IntSummaryStatistics;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -72,6 +73,64 @@ public class PracticeMethods {
 		System.out.println("intersection : " + Arrays.toString(intersection(arr1, arr2)));
 		System.out.println("reverseInt: " + reverseInt(12345));
 		System.out.println("isNumPalindrome : " + isNumPalindrome(121));
+		
+		
+		int [] arrM1 = {2, 4, 3, 1, 0 };
+		int [] arrM2 = {1, 2, 6, 3, 4, 5 };
+	//	System.out.println(missingNumberFromTwoArray(arrM1, arrM2));
+		System.out.println("missingNumberFromTwoArray2: " + missingNumberFromTwoArray2(arrM1, arrM2));
+	}
+	
+	
+	
+	/**
+	 * Method: missingNumberFromTwoArray2
+	 * Description: This method will help to find what are the missing values is array2 from array1
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	public static List<Integer> missingNumberFromTwoArray2(int [] arr1, int[] arr2) {		
+		List<Integer> missValue = new ArrayList<Integer>();	
+		HashSet<Integer> set = new HashSet<Integer>();
+		for(int a1 : arr1) {
+			set.add(a1);
+		}		
+		for (int i : arr2) {			
+			if(!set.contains(i)) {			
+				missValue.add(i);
+			}
+		}
+		
+		// Those line of code required if i want to print value using array
+		int [] value = new int [missValue.size()];		
+		for(int i = 0; i < missValue.size(); i++) {			
+			value[i] = missValue.get(i);				
+		}
+		System.out.println("Printing Missing value using Array: "+ Arrays.toString(value));
+		
+		return missValue;
+	}
+	
+	
+	public static int missingNumberFromTwoArray(int [] arr1, int [] arr2) {		
+		int  missingValue = 0;
+		int sum1 = 0;
+		int sum2 = 0;
+		for(int i = 0; i < arr1.length; i++) {
+			sum1 = sum1+ arr1[i];
+		}
+		for(int j = 0; j < arr2.length; j++) {
+			sum2 = sum2+ arr2[j];
+		}
+		if (sum1 - sum2 >= 0 ) {
+			missingValue = sum1 - sum2;
+		}else if (sum1 - sum2 < 0) {
+			
+			missingValue = sum2 - sum1;
+		}
+		
+		return missingValue;
 	}
 	
 	/**
