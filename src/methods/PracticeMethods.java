@@ -1,11 +1,8 @@
 package methods;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.IntSummaryStatistics;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -27,7 +24,7 @@ public class PracticeMethods {
 		System.out.println("List of prime number: " + primeNumberList(36));
 		System.out.println("Is Prime number: " + isPrime(11));
 		System.out.println("getFactorNumList: " + getFactorNumList(4));
-		System.out.println("primeFactors: " + primeFactors(10));
+		System.out.println("primeFactors: " + primeFactors(36));
 
 		System.out.println(getPrimeFactor(5));
 
@@ -79,9 +76,447 @@ public class PracticeMethods {
 		int [] arrM2 = {1, 2, 6, 3, 4, 5 };
 	//	System.out.println(missingNumberFromTwoArray(arrM1, arrM2));
 		System.out.println("missingNumberFromTwoArray2: " + missingNumberFromTwoArray2(arrM1, arrM2));
+		
+				
+		int [] dupArray = {2,4,8,3,6,2,8,9};
+		System.out.println("duplicateNumber: " + Arrays.toString(duplicateNumber(dupArray)));
+		
+		List<Integer> numList = new ArrayList<Integer>();
+		numList.add(1);
+		numList.add(3);
+		numList.add(5);
+		numList.add(1);
+		numList.add(6);
+		numList.add(11);
+		numList.add(33);
+		numList.add(5);
+		numList.add(11);
+		numList.add(60);
+		numList.add(11);
+		System.out.println("removeDupDisplayDuo: "+ removeDupDisplayDup(numList));
+		System.out.println(getUserOccurrences("User1,User2,user1,user3,user2,user3,user1"));		
+		int [] secondLagArray= {75,88,44,55};
+		System.out.println(getSecondLagestNumFromArray(secondLagArray));		
+		System.out.println("findUniou: "+ findUniou("usha", "asha"));
+		
+		int [] lagArray= {75,88,44,55};
+		System.out.println("getLargestNumFromArray: " + getLargestNumFromArray(lagArray));
+		
+		int [] dupArray1 = {2,9,3,4,7,3,9,55,33,44,33,20,9};
+		System.out.println("moveDuplicateToAnArray: "+ Arrays.toString(moveDuplicateToAnArray(dupArray1)));
+		System.out.println(isAnagram("Hello world", "world hello"));
+		
+		int [] a1 = {1,12,15,26,38};
+		int [] a2 = {2,13,17,30,45};
+		System.out.println("getMaiden: " + getMaiden(a1, a2));
+		System.out.println("reverseIntegerArray: " + Arrays.toString(reverseIntegerArray(a1)));
+		
+		
+		int [] findUniqeArray = {1,2,6,2,9};
+		System.out.println("uniqueIntegerArray: "+ Arrays.toString(uniqueIntegerArray(findUniqeArray)));
+		
+		System.out.println("getNearestPalindrome: "+ getNearestPalindrome(6603494));
+		//int [] arrx = {-1, -3, -4, 2, 0, -5};
+		int [] arrx = {1, 4, 3, 6, 7, 0};
+		System.out.println("largestProductOfTwoConsecutiveElements: " + Arrays.toString(largestProductOfTwoConsecutiveElements(arrx)));
+		
+		System.out.println("reverseWord: " + reverseWord("You are hosting a game in your server"));
+		System.out.println("reverseWord2: "+ reverseWord2("You are hosting a game in your server"));
+	}
+	
+	/**
+	 * Method name: reverseWord2
+	 * @param text
+	 * @return
+	 */
+	public static String reverseWord2(String text) {
+		String reverseWord = "";
+		String [] wordArray = text.split(" ");
+		for(int i = 0; i < wordArray.length; i++) {
+			StringBuilder sb = new StringBuilder(wordArray[i]);
+			sb.reverse();
+			reverseWord = reverseWord.trim() + " " + sb.toString();
+		}
+		
+		return reverseWord;
+	}
+	
+	/**
+	 * Method name: reverseWord
+	 * Description: This method will reverse every single word of sentence
+	 * Related Method: reverse
+	 * @param text
+	 * @return
+	 */
+	public static String reverseWord(String text) {
+		String reverseWord = "";
+		
+		String [] wordArray =  text.split(" ");	
+		
+		for(int i = 0; i < wordArray.length; i++) {
+			
+			String value = String.valueOf(wordArray[i]);
+					
+			reverseWord = reverseWord.trim() +" "+ reverse(value);;
+		}
+		
+		return reverseWord;
+	}
+	
+	//This method is developed for reverseWord method
+	public static String reverse (String input) {
+		String str = "";
+		for(int i = input.length()-1; i >= 0; i--) {
+			str = str + String.valueOf(input.charAt(i));
+		}
+		return str;
+	}
+	
+	/**
+	 * Method name : largestProductOfTwoConsecutiveElements
+	 * Description: Given an array, find the largest product of two consecutive elements.
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int [] largestProductOfTwoConsecutiveElements(int [] arr) {
+		int [] result = new int[2];		
+		Arrays.sort(arr);
+		int maxNum = arr[0] * arr[1];
+		int indexOne = 0;
+		int indexTwo = 0;
+		for(int i = 0; i < arr.length-1; i++) {
+			if(maxNum < arr[i]* arr[i+1]) {
+				maxNum = arr[i]* arr[i+1];
+				indexOne = i;
+				indexTwo = i+1;
+				result[0] = arr[indexOne];
+				result[1] = arr[indexTwo];
+			}else {
+				result[0] = arr[indexOne];
+				result[1] = arr[indexTwo+1];
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Method Name:getNearestPalindrome
+	 * Description: This method will help to find nearest palindrome number
+	 * Related Method: reverseIntFGNP
+	 * @param number
+	 * @return
+	 */
+	
+	public static int getNearestPalindrome(int number) {
+		@SuppressWarnings("unused")
+		int nearestPalindrome = 0;
+		int increase = 0; 
+		int decrecase = 0;
+		while(true) {	
+			increase = increase + 1;
+			int num1 = number + increase;
+			if(reverseIntFGNP(num1) == true) {				
+			return	nearestPalindrome = num1;
+			}
+			
+			else if (reverseIntFGNP(num1) == false) {
+				decrecase = decrecase + 1;
+				int num2 = number - decrecase;
+				if(reverseIntFGNP(num2) == true) {				
+					return nearestPalindrome = num2;
+					
+				}
+			}
+		}
+		
+	
+	}
+	
+	// This method is used for getNearestPalindrome
+	public static boolean reverseIntFGNP(int num) {		
+		boolean result = false;
+		int input = num;
+		int reverse = 0;
+		int reminder = 0;
+		while (num != 0) {		
+			reminder = num % 10;
+			reverse = reverse * 10 + reminder;
+			num = num / 10;
+		}
+		
+		if(reverse == input) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Method name: uniqueIntegerArray
+	 * @param arr
+	 * @return
+	 */
+	public static int [] uniqueIntegerArray(int [] arr) {	
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i : arr) {		
+			if(!map.containsKey(i)) {
+				map.put(i, 1);
+			}else {
+				map.put(i, map.get(i)+1);
+			}
+		}
+		List<Integer> list = new ArrayList<Integer>();
+		;
+		for(Entry<Integer, Integer> m : map.entrySet()){
+			if(m.getValue() == 1) {
+				list.add(m.getKey()); 
+			}	
+		}
+		int [] uniqueInteger= new int[list.size()];
+		for(int i = 0; i < list.size(); i++) {
+			uniqueInteger[i] = list.get(i);
+		}
+		
+		return uniqueInteger;
+	}
+	
+	/**
+	 * Method name: reverseIntegerArray
+	 * Description: it will reverse the the array
+	 * @param arr
+	 * @return
+	 */
+	public static int [] reverseIntegerArray(int [] arr) {
+		int arrLength = arr.length;	
+		int [] reverse = new int [arrLength];
+		for(int i = 0; i < arrLength; i++) {
+			
+			reverse[i] = arr[arrLength-i-1];
+		}
+		
+		return reverse;
+	}
+
+	/**
+	 * Method: getMaiden
+	 * Description: Median of two sorted arrays of same size
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+
+	public static int getMaiden(int [] arr1, int [] arr2) {	
+		int maiden = 0;
+		int a1_middle = (0 + arr1.length-1)/2;
+		int a2_middle = (0 + arr2.length-1)/2;
+		
+		maiden = (arr1[a1_middle] + arr2[a2_middle])/2;
+		
+		return maiden;
 	}
 	
 	
+	/**
+	 * Method name: ANAGRAM
+	 * Link: https://www.youtube.com/watch?v=6HSjG0JogIU
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
+	
+	public static boolean isAnagram(String str1, String str2) {
+		boolean result = false;
+		
+		char [] word1 = str1.toLowerCase().replaceAll(" ", "").toCharArray();
+		
+		char [] word2 = str2.toLowerCase().replaceAll(" ", "").toCharArray();
+		
+		Arrays.sort(word1);
+		Arrays.sort(word2);
+		
+		if(Arrays.equals(word1, word2)) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Method name: moveDuplicateToAnArray
+	 * description: Given an array of integers, how would you move the duplicate integers into a different array?
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int [] moveDuplicateToAnArray(int [] arr) {			
+		HashSet<Integer> set = new HashSet<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
+		for(int i : arr) {	
+			if(!set.contains(i)) {
+				set.add(i);				
+			}else {				
+				list.add(i);
+			}
+		}
+		int [] dupValuArray = new int[list.size()];		
+		for(int i = 0; i < list.size(); i++) {			
+			dupValuArray[i] = list.get(i);
+		}		
+		return dupValuArray;
+	}
+	
+	/**
+	 * Method : getLargestNumFromArray
+	 * @param arr
+	 * @return
+	 */
+	public static int getLargestNumFromArray(int [] arr) {
+		int largNum = arr[0];
+		for(int i = 0; i < arr.length; i ++) {
+			
+			if(largNum < arr[i]) {
+				
+				largNum = arr[i];
+			}
+		}
+		
+		
+		return largNum;
+	}
+	
+	
+	/**
+	 * Method name: findUniou
+	 * Description: It will sort out the string and make the string unique 
+	 * @param text1
+	 * @param text2
+	 * @return
+	 */
+	
+	public static String findUniou(String text1, String text2) {
+		String union = "";
+		String addString = text1.concat(text2);
+		char[] charStr = addString.toCharArray();
+		Set<Character> set = new TreeSet<Character>();
+		for (char c : charStr) {
+			set.add(c);
+
+		}
+		union = union + set.toString();
+
+		return union;
+	}
+	
+	
+	/**
+	 * Method name: getSecondLagestNumFromArray
+	 * Description: it will find the second largest num from array
+	 * @param arr
+	 * @return
+	 */	
+	
+	public static int getSecondLagestNumFromArray(int [] arr) {
+		int highest = Integer.MIN_VALUE;
+		int secondHighest = Integer.MIN_VALUE;		
+		for(int i = 0 ; i < arr.length; i++) {		
+			if(arr[i]> highest) {
+				secondHighest = highest;
+				System.out.println("second: "+ secondHighest);
+				highest = arr[i];				
+			}else if (arr[i]> secondHighest) {
+				
+				secondHighest = arr[i];
+			}
+		}
+		
+		return secondHighest;
+	}
+	
+	/**
+	 * Method name: getUserOccurrences
+	 * Description: write a program where a there are multiple users logging  into the system or file and I want
+	 *  to know the login Occurrences of the each user . Note : The file is separated by the commas. ex: User1 , User2, user1 , user3.........
+	 * @param users
+	 * @return
+	 */
+	
+	public static Map<String, Integer> getUserOccurrences(String users){
+		
+		Map<String, Integer> userOccurances = new HashMap<String, Integer>();
+		String [] usr = users.toLowerCase().split(",");	
+		for (String u : usr) {		
+			if (!userOccurances.containsKey(u)) {			
+				userOccurances.put(u, 1);
+			}else {			
+				userOccurances.put(u,userOccurances.get(u)+1);
+			}			
+		}				
+		return userOccurances;
+	}
+	
+	
+	/**
+	 * Method name: removeDupDisplayDup
+	 * Description: Amazon interview question --> remove duplicate from list and return duplicate 
+	 * @param numList
+	 * @return
+	 */
+	
+	public static List<Integer> removeDupDisplayDup(List<Integer> numList){		
+		List<Integer> dupList = new ArrayList<Integer>();
+		HashSet<Integer> set = new HashSet<Integer>();		
+		for(int i : numList) {
+			if(!set.contains(i)) {				
+				set.add(i);
+			}else {
+				dupList.add(i);
+			}
+		}				
+		return dupList;
+	}
+	
+	
+	/**
+	 * Method name: duplicateNumber
+	 * Description: This method will return duplicate number 
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int [] duplicateNumber(int [] arr) {
+		
+		List<Integer> list = new ArrayList<Integer>();
+		
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int a : arr) {
+			
+			if(!map.containsKey(a)) {
+				
+				map.put(a, 1);
+			}else {
+				
+				map.put(a, map.get(a)+1);
+			}
+		}
+		
+		for(Entry<Integer, Integer> m : map.entrySet()) {
+			
+			if(m.getValue() > 1) {
+				
+				list.add(m.getKey());
+			}
+		}
+		int [] duplicateNum = new int [list.size()];
+		
+		for(int i = 0; i < list.size(); i ++) {
+			
+			duplicateNum[i]=list.get(i);
+		}
+		
+		return duplicateNum;
+	}
 	
 	/**
 	 * Method: missingNumberFromTwoArray2
@@ -166,7 +601,7 @@ public class PracticeMethods {
 	 * @return
 	 */
 	
-	public static int reverseInt(int num) {
+	public static int reverseInt (int num) {
 		int reverse = 0;
 		int reminder = 0;
 		
