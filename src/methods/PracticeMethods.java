@@ -122,6 +122,127 @@ public class PracticeMethods {
 		
 		System.out.println("reverseWord: " + reverseWord("You are hosting a game in your server"));
 		System.out.println("reverseWord2: "+ reverseWord2("You are hosting a game in your server"));
+		int [] arrm1 = {1,3,8,4,15}; 
+		int [] arrm2 = {9,7,8,5,19}; 
+		System.out.println("mergeTwoArraySort: "+ Arrays.toString(mergeTwoArraySort(arrm1, arrm2)));
+		System.out.println("canBeConvertedToPalindrome: "+ canBeConvertedToPalindrome("yakak")); //andaadna
+		
+		int[] sumA = { 4, -2, 6, 7, 3, 5 };
+		sumPairs(sumA, 10);
+		System.out.println(getSubstringWithOutRepeatingChar("pwwkew"));
+	}
+	
+	
+	/**
+	 * Method Name: getSubstringWithOutRepeatingChar
+	 * Description: This method will return longest substring without repeating char 
+	 * @param text
+	 * @return
+	 */
+	
+	public static String getSubstringWithOutRepeatingChar(String text) {		
+		String longestTillNow = "";
+		String longestOverAll = "";
+		Set<Character> set = new HashSet<Character>();
+		
+		for(int i = 0; i < text.length(); i++) {
+			char c = text.charAt(i);
+		
+			if(set.contains(c)) {
+				longestTillNow = "";
+				set.clear();
+			}
+			longestTillNow += c;
+			set.add(c);
+			
+			if(longestTillNow.length() > longestOverAll.length()) {
+				
+				longestOverAll = longestTillNow;
+			}
+		}
+			
+		return longestOverAll;
+	}
+	
+	
+	/**
+	 * Method name: sumPairs
+	 * Description: This method will print the value which are equals 10
+	 * @param arr
+	 * @param sum
+	 */
+	public static void sumPairs(int [] arr, int sum) {
+		
+		Set<Integer> set = new HashSet<Integer>();
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			if(set.contains(arr[i])) {
+				
+				System.out.println(arr[i] + "," + (sum-arr[i]));
+			}else {
+				
+				set.add(sum-arr[i]);
+			}
+		}
+		
+	}
+	
+	
+	/**
+	 * Method name: canBeConvertedToPalindrome
+	 * Description: This method will check whether the string can be converted into plaindrome
+	 * @param text
+	 * @return
+	 */
+	
+	public static boolean canBeConvertedToPalindrome(String text) {
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		char [] character = text.toCharArray();
+		for(char c: character) {
+			if(!map.containsKey(c)) {
+				map.put(c, 1);
+			}else {
+				map.put(c, map.get(c)+1);
+			}			
+		}
+		boolean hasOdd = false;
+		for(Entry<Character, Integer> m : map.entrySet()) {
+			
+			if(m.getValue() % 2 == 1) {
+				if (hasOdd) {
+					
+					return false;
+				}else {
+					hasOdd = true;
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	
+	/**
+	 * Method name:mergeTwoArraySort
+	 * Description: This method will merge two array and sort 
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	public static int [] mergeTwoArraySort(int [] arr1, int [] arr2) {
+		int [] mergeArray = new int[arr1.length + arr2.length]; 		
+		int c = 0;
+		for(int i =0; i < arr1.length; i ++) {
+			mergeArray[i] = arr1[i];
+			c++;
+		}
+		for(int j = 0; j < arr2.length; j++) {
+			mergeArray[c++] = arr2[j];
+		}
+		Arrays.toString(mergeArray);
+		
+		return mergeArray;
 	}
 	
 	/**
