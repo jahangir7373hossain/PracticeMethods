@@ -116,8 +116,8 @@ public class PracticeMethods {
 		System.out.println("uniqueIntegerArray: "+ Arrays.toString(uniqueIntegerArray(findUniqeArray)));
 		
 		System.out.println("getNearestPalindrome: "+ getNearestPalindrome(6603494));
-		//int [] arrx = {-1, -3, -4, 2, 0, -5};
-		int [] arrx = {1, 4, 3, 6, 7, 0};
+		int [] arrx = {-1, -3, -4, 2, 0, -5};
+		//int [] arrx = {1, 4, 3, 6, 7, 0};
 		System.out.println("largestProductOfTwoConsecutiveElements: " + Arrays.toString(largestProductOfTwoConsecutiveElements(arrx)));
 		
 		System.out.println("reverseWord: " + reverseWord("You are hosting a game in your server"));
@@ -130,8 +130,242 @@ public class PracticeMethods {
 		int[] sumA = { 4, -2, 6, 7, 3, 5 };
 		sumPairs(sumA, 10);
 		System.out.println(getSubstringWithOutRepeatingChar("pwwkew"));
+		System.out.println("mostCommonCharInString: "+ mostRepeatingCharInString("Ramrrnarmmmesh"));
+		
+		System.out.println("maximumConsecutiveRepeatingCharacter: "+ maximumConsecutiveRepeatingCharacter("abcc"));
+		sumPaires2(sumA, 10);
+		
+		int [] sumArra = {3,5,-5,-1,4,3,-2};
+		System.out.println("sumMaximumSubArray: "+ sumMaximumSubArray(sumArra));
+		
+		int[] moveZero = {2,0,3,0,8};
+		System.out.println(Arrays.toString(moveAllZeroToRight(moveZero)));
+		
+		System.out.println("SumOfDigitsTillSingleDigitRecursion: "+ SumOfDigitsTillSingleDigitRecursion(1234));
+		System.out.println(a(1234));
+		
+		int [] xy = {4,2,3,5,7};
+		System.out.println("removeElementFromArray: "+ Arrays.toString(removeElementFromArray(xy, 3)));
+		
+		int[] productarr ={-2, -3, 0, -2, -40};
+			
+		//	{-2, -3, 0, -2, -40};
+		System.out.println(maxProductArray(productarr));
 	}
 	
+	public static int maxProductArray(int [] arr) {
+		int max = arr[0];
+		int currMax = arr[0];
+		int currMin = arr[0];
+		for(int i = 1; i < arr.length; i ++) {
+			
+			int nextMax = currMax * arr[i];
+			int nextMin = currMin * arr[i];
+			
+			currMax = Math.max(arr[i], Math.max(nextMax, nextMin));
+			currMin = Math.min(arr[i], Math.min(nextMax, nextMin));
+
+			max = Math.max(max, currMax);
+		}
+		
+		return max;
+	}
+	
+	/**
+	 * Method: removeElementFromArray
+	 * @param arr
+	 * @param ele
+	 * @return
+	 */
+	
+	public static int [] removeElementFromArray(int [] arr, int ele) {		
+ 		int index = 0;		
+		for(int i = 0; i < arr.length; i ++) {
+			if(arr[i] == ele) {
+				index = i;
+				break;
+			}
+		}
+		
+		int len = arr.length;
+		for(int i = index; i < len-1; i++) {		
+			arr[i] = arr[i+1];
+		}	
+		arr[len-1] = 0;	
+		return arr;
+		
+	}
+	
+	
+	//Method a and b help each other
+	//SumOfDigitsTillSingleDigitRecursion
+	
+	public static int a(int num) {
+		
+		if(num < 9) {
+			return num;
+		}
+		int sum = 0;
+	
+		while(num > 0) {
+			
+			sum = sum + num % 10;
+			num /=10;
+		}
+		if(sum > 9) {
+			return b(sum);
+		}
+		
+		return sum;
+	}
+	
+	
+	public static int b(int num) {	
+		int sum = 0;	
+		while(num > 0) {	
+			sum = sum + num % 10;
+			num /=10;
+		}
+		
+		return sum;
+	}
+	
+	// This method is same as method = a
+	public static int SumOfDigitsTillSingleDigitRecursion(int num) {
+		
+		if(num < 10) {
+			return num;
+		}
+		int sum = 0;
+		while(num > 0) {
+			
+			sum = sum + num%10;
+			num = num/ 10;
+		}
+		
+		return(SumOfDigitsTillSingleDigitRecursion(sum));
+	}
+	
+	/**
+	 * Method name: moveAllZeroToRight
+	 * Method Description: This method will move all zero to the right side
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int[] moveAllZeroToRight(int[] arr) {
+		int[] newArr = new int[arr.length];
+		int index = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > 0) {
+				newArr[index++] = arr[i];
+			}
+		}
+
+		return newArr;
+	}
+	
+	/**
+	 * Method name: sumMaximumSubArray
+	 * Link: https://www.youtube.com/watch?v=U4iVyHQQIqA
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int sumMaximumSubArray(int [] arr) {		
+		int maxSoFar = Integer.MIN_VALUE;
+		int maxEndingHere = 0;
+		for(int i = 0; i < arr.length; i++) {
+			maxEndingHere = maxEndingHere + arr[i];
+			if(maxSoFar < maxEndingHere) {
+				maxSoFar = maxEndingHere;
+			}
+			if(maxEndingHere < 0) {
+				maxEndingHere = 0;
+			}
+		}
+		
+		return maxSoFar;
+	}
+	
+	
+	/**
+	 * Method name: sumPairs
+	 * Description: This method will print the value which are equals 10
+	 * @param arr
+	 * @param sum
+	 */
+	
+	public static void sumPaires2(int [] arr, int target) {	
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i = 0; i < arr.length; i++) {
+			
+			if(!map.containsKey(target - arr[i])) {
+				
+				map.put(arr[i], i);
+			}else {
+				System.out.println(target-arr[i] +","+ arr[i]);
+			}
+		}
+		
+	}
+	
+	/**
+	 * Method name: maximumConsecutiveRepeatingCharacter
+	 * description: Given a string, the task is to find maximum consecutive repeating character in string.
+	 *  We do not need to consider overall count, but the count of repeating that appear at one place.
+	 * @param text
+	 * @return
+	 */
+	
+	public static char maximumConsecutiveRepeatingCharacter(String text) {
+		char result = 0;
+		int charCount = 1;
+		int count = 0;
+		for (int i = 0; i < text.length(); i ++) {
+			if(i < text.length() - 1 && text.charAt(i) == text.charAt(i+1)) {
+				charCount++;
+				
+			}else {
+				if(charCount > count) {
+					count = charCount;
+					result = text.charAt(i);
+					
+				}
+				charCount = 1;
+			}
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Method name : mostCommonCharInString
+	 * Description: This method will help to find the most common char from string  
+	 * @param text
+	 * @return
+	 */
+	public static char mostRepeatingCharInString(String text) {
+		char result = 0;		
+		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+		char [] character = text.replaceAll(" ", "").toCharArray();
+		for(char c: character) {
+			if(!map.containsKey(c)) {
+				map.put(c, 1);
+			}else {
+				map.put(c, map.get(c)+1);
+			}
+		}
+		int max = 0;		
+		for(Entry<Character, Integer> m: map.entrySet()) {			
+			if(max < m.getValue()) {			
+				max = m.getValue();
+				result = m.getKey();
+			}
+		}
+			
+		return result;
+	}
 	
 	/**
 	 * Method Name: getSubstringWithOutRepeatingChar
@@ -240,7 +474,7 @@ public class PracticeMethods {
 		for(int j = 0; j < arr2.length; j++) {
 			mergeArray[c++] = arr2[j];
 		}
-		Arrays.toString(mergeArray);
+		Arrays.sort(mergeArray);
 		
 		return mergeArray;
 	}
@@ -299,26 +533,25 @@ public class PracticeMethods {
 	 * @param arr
 	 * @return
 	 */
-	
-	public static int [] largestProductOfTwoConsecutiveElements(int [] arr) {
-		int [] result = new int[2];		
+
+	public static int[] largestProductOfTwoConsecutiveElements(int[] arr) {
+		int[] result = new int[2];
 		Arrays.sort(arr);
 		int maxNum = arr[0] * arr[1];
 		int indexOne = 0;
 		int indexTwo = 0;
-		for(int i = 0; i < arr.length-1; i++) {
-			if(maxNum < arr[i]* arr[i+1]) {
-				maxNum = arr[i]* arr[i+1];
-				indexOne = i;
-				indexTwo = i+1;
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (maxNum < arr[i] * arr[i + 1]) {
+				maxNum = arr[i] * arr[i + 1];
+				result[0] = arr[i];
+				result[1] = arr[i + 1];
+			} else {
 				result[0] = arr[indexOne];
-				result[1] = arr[indexTwo];
-			}else {
-				result[0] = arr[indexOne];
-				result[1] = arr[indexTwo+1];
+				result[1] = arr[indexTwo + 1];
+
 			}
 		}
-		
+
 		return result;
 	}
 	
