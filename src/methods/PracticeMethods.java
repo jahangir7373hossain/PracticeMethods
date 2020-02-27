@@ -1,4 +1,5 @@
 package methods;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -70,17 +71,15 @@ public class PracticeMethods {
 		System.out.println("intersection : " + Arrays.toString(intersection(arr1, arr2)));
 		System.out.println("reverseInt: " + reverseInt(12345));
 		System.out.println("isNumPalindrome : " + isNumPalindrome(121));
-		
-		
-		int [] arrM1 = {2, 4, 3, 1, 0 };
-		int [] arrM2 = {1, 2, 6, 3, 4, 5 };
-	//	System.out.println(missingNumberFromTwoArray(arrM1, arrM2));
+
+		int[] arrM1 = { 2, 4, 3, 1, 0 };
+		int[] arrM2 = { 1, 2, 6, 3, 4, 5 };
+		// System.out.println(missingNumberFromTwoArray(arrM1, arrM2));
 		System.out.println("missingNumberFromTwoArray2: " + missingNumberFromTwoArray2(arrM1, arrM2));
-		
-				
-		int [] dupArray = {2,4,8,3,6,2,8,9};
+
+		int[] dupArray = { 2, 4, 8, 3, 6, 2, 8, 9 };
 		System.out.println("duplicateNumber: " + Arrays.toString(duplicateNumber(dupArray)));
-		
+
 		List<Integer> numList = new ArrayList<Integer>();
 		numList.add(1);
 		numList.add(3);
@@ -93,166 +92,268 @@ public class PracticeMethods {
 		numList.add(11);
 		numList.add(60);
 		numList.add(11);
-		System.out.println("removeDupDisplayDuo: "+ removeDupDisplayDup(numList));
-		System.out.println(getUserOccurrences("User1,User2,user1,user3,user2,user3,user1"));		
-		int [] secondLagArray= {75,88,44,55};
-		System.out.println(getSecondLagestNumFromArray(secondLagArray));		
-		System.out.println("findUniou: "+ findUniou("usha", "asha"));
-		
-		int [] lagArray= {75,88,44,55};
+		System.out.println("removeDupDisplayDuo: " + removeDupDisplayDup(numList));
+		System.out.println(getUserOccurrences("User1,User2,user1,user3,user2,user3,user1"));
+		int[] secondLagArray = { 75, 88, 44, 55 };
+		System.out.println(getSecondLagestNumFromArray(secondLagArray));
+		System.out.println("findUniou: " + findUniou("usha", "asha"));
+
+		int[] lagArray = { 75, 88, 44, 55 };
 		System.out.println("getLargestNumFromArray: " + getLargestNumFromArray(lagArray));
-		
-		int [] dupArray1 = {2,9,3,4,7,3,9,55,33,44,33,20,9};
-		System.out.println("moveDuplicateToAnArray: "+ Arrays.toString(moveDuplicateToAnArray(dupArray1)));
+
+		int[] dupArray1 = { 2, 9, 3, 4, 7, 3, 9, 55, 33, 44, 33, 20, 9 };
+		System.out.println("moveDuplicateToAnArray: " + Arrays.toString(moveDuplicateToAnArray(dupArray1)));
 		System.out.println(isAnagram("Hello world", "world hello"));
-		
-		int [] a1 = {1,12,15,26,38};
-		int [] a2 = {2,13,17,30,45};
+
+		int[] a1 = { 1, 12, 15, 26, 38 };
+		int[] a2 = { 2, 13, 17, 30, 45 };
 		System.out.println("getMaiden: " + getMaiden(a1, a2));
 		System.out.println("reverseIntegerArray: " + Arrays.toString(reverseIntegerArray(a1)));
-		
-		
-		int [] findUniqeArray = {1,2,6,2,9};
-		System.out.println("uniqueIntegerArray: "+ Arrays.toString(uniqueIntegerArray(findUniqeArray)));
-		
-		System.out.println("getNearestPalindrome: "+ getNearestPalindrome(6603494));
-		int [] arrx = {-1, -3, -4, 2, 0, -5};
-		//int [] arrx = {1, 4, 3, 6, 7, 0};
-		System.out.println("largestProductOfTwoConsecutiveElements: " + Arrays.toString(largestProductOfTwoConsecutiveElements(arrx)));
-		
+
+		int[] findUniqeArray = { 1, 2, 6, 2, 9 };
+		System.out.println("uniqueIntegerArray: " + Arrays.toString(uniqueIntegerArray(findUniqeArray)));
+
+		System.out.println("getNearestPalindrome: " + getNearestPalindrome(6603494));
+		int[] arrx = { -1, -3, -4, 2, 0, -5 };
+		// int [] arrx = {1, 4, 3, 6, 7, 0};
+		System.out.println("largestProductOfTwoConsecutiveElements: "
+				+ Arrays.toString(largestProductOfTwoConsecutiveElements(arrx)));
+
 		System.out.println("reverseWord: " + reverseWord("You are hosting a game in your server"));
-		System.out.println("reverseWord2: "+ reverseWord2("You are hosting a game in your server"));
-		int [] arrm1 = {1,3,8,4,15}; 
-		int [] arrm2 = {9,7,8,5,19}; 
-		System.out.println("mergeTwoArraySort: "+ Arrays.toString(mergeTwoArraySort(arrm1, arrm2)));
-		System.out.println("canBeConvertedToPalindrome: "+ canBeConvertedToPalindrome("yakak")); //andaadna
-		
+		System.out.println("reverseWord2: " + reverseWord2("You are hosting a game in your server"));
+		int[] arrm1 = { 1, 3, 8, 4, 15 };
+		int[] arrm2 = { 9, 7, 8, 5, 19 };
+		System.out.println("mergeTwoArraySort: " + Arrays.toString(mergeTwoArraySort(arrm1, arrm2)));
+		System.out.println("canBeConvertedToPalindrome: " + canBeConvertedToPalindrome("yakak")); // andaadna
+
 		int[] sumA = { 4, -2, 6, 7, 3, 5 };
 		sumPairs(sumA, 10);
 		System.out.println(getSubstringWithOutRepeatingChar("pwwkew"));
-		System.out.println("mostCommonCharInString: "+ mostRepeatingCharInString("Ramrrnarmmmesh"));
-		
-		System.out.println("maximumConsecutiveRepeatingCharacter: "+ maximumConsecutiveRepeatingCharacter("abcc"));
+		System.out.println("mostCommonCharInString: " + mostRepeatingCharInString("Ramrrnarmmmesh"));
+
+		System.out
+				.println("maximumConsecutiveRepeatingCharacter: " + maximumConsecutiveRepeatingCharacter("abcccbbbb"));
 		sumPaires2(sumA, 10);
-		
-		int [] sumArra = {3,5,-5,-1,4,3,-2};
-		System.out.println("sumMaximumSubArray: "+ sumMaximumSubArray(sumArra));
-		
-		int[] moveZero = {2,0,3,0,8};
+
+		int[] sumArra = { 3, 5, -5, -1, 4, 3, -2 };
+		System.out.println("sumMaximumSubArray: " + sumMaximumSubArray(sumArra));
+
+		int[] moveZero = { 2, 0, 3, 0, 8 };
 		System.out.println(Arrays.toString(moveAllZeroToRight(moveZero)));
-		
-		System.out.println("SumOfDigitsTillSingleDigitRecursion: "+ SumOfDigitsTillSingleDigitRecursion(1234));
+
+		System.out.println("SumOfDigitsTillSingleDigitRecursion: " + SumOfDigitsTillSingleDigitRecursion(1234));
 		System.out.println(a(1234));
-		
-		int [] xy = {4,2,3,5,7};
-		System.out.println("removeElementFromArray: "+ Arrays.toString(removeElementFromArray(xy, 3)));
-		
-		int[] productarr ={-2, -3, 0, -2, -40};
-			
-		//	{-2, -3, 0, -2, -40};
+
+		int[] xy = { 4, 2, 3, 5, 7 };
+		System.out.println("removeElementFromArray: " + Arrays.toString(removeElementFromArray(xy, 3)));
+
+		int[] productarr = { -2, -3, 0, -2, -40 };
+
+		// {-2, -3, 0, -2, -40};
 		System.out.println(maxProductArray(productarr));
+
+		int[] arrFAL = { 1, 3, 5, 5, 5, 5, 7, 67, 123, 125 };
+		System.out.println("findFirstAndLast: " + Arrays.toString(findFirstAndLast(arrFAL, 5)));
+		
+		int [] arrM3 = {9,5,4,3,15};
+		System.out.println("getThirdHigestNumber: " + getThirdHigestNumber(arrM3));
+		
+		
+		int [] missArra = {4,3,2,7,8,2,3,1};
+		System.out.println(findDisappearedNumber(missArra));
 	}
 	
-	public static int maxProductArray(int [] arr) {
+	
+	/**
+	 * Method Name: findDisappearedNumber
+	 * Description: Find the repeating and the missing | Added 3 new methods.Given an unsorted array of size n.
+	 *  Array elements are in the range from 1 to n. One number from set {1, 2, …n}
+	 *   is missing and one number occurs twice in the array. Find these two numbers.
+	 * @param arr
+	 * @return
+	 */
+	
+	public static List<Integer> findDisappearedNumber(int [] arr){
+		List<Integer> missingNumber = new ArrayList<Integer>();
+		Set<Integer> set = new HashSet<Integer>();
+		for(int i : arr) {
+			set.add(i);
+		}
+		
+		for(int i = 1; i <= arr.length; i++) {
+			
+			if(!set.contains(i)) {
+				missingNumber.add(i);
+			}
+		}
+		
+		return missingNumber;
+	}
+
+	/**
+	 * Method name: getThirdHigestNumber
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int getThirdHigestNumber(int[] arr) {
+		int max1 = Integer.MIN_VALUE;
+		int max2 = Integer.MIN_VALUE;
+		int max3 = Integer.MIN_VALUE;
+
+		for (int i : arr) {
+			if(i > max1) {
+				max3 = max2;
+				max2 = max1;
+				max1 = i;
+			}
+			else if(i > max2) {
+				max3 = max2;
+				max2 = i;
+			}
+			else if(i > max3) {
+				max3 = i;
+			}
+		}
+
+		return max3;
+	}
+
+	/**
+	 * Method name : findFirstAndLast description: Given a sorted array with
+	 * possibly duplicate elements, the task is to find indexes of first and last
+	 * occurrences of an element x in the given array.
+	 * 
+	 * @param arr
+	 * @param target
+	 * @return
+	 */
+
+	public static int[] findFirstAndLast(int[] arr, int target) {
+		int[] array = new int[2];
+		int firstIndex = 0;
+		int lastIndex = 0;
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+
+				if (!map.containsKey(arr[i])) {
+					map.put(arr[i], 1);
+					firstIndex = i;
+				} else {
+					map.put(arr[i], map.get(arr[i] + 1));
+					lastIndex = i;
+				}
+				if (lastIndex == 0) {
+					lastIndex = firstIndex;
+				}
+			}
+		}
+		array[0] = firstIndex;
+		array[1] = lastIndex;
+		return array;
+	}
+
+	public static int maxProductArray(int[] arr) {
 		int max = arr[0];
 		int currMax = arr[0];
 		int currMin = arr[0];
-		for(int i = 1; i < arr.length; i ++) {
-			
+		for (int i = 1; i < arr.length; i++) {
+
 			int nextMax = currMax * arr[i];
 			int nextMin = currMin * arr[i];
-			
+
 			currMax = Math.max(arr[i], Math.max(nextMax, nextMin));
 			currMin = Math.min(arr[i], Math.min(nextMax, nextMin));
 
 			max = Math.max(max, currMax);
 		}
-		
+
 		return max;
 	}
-	
+
 	/**
 	 * Method: removeElementFromArray
+	 * 
 	 * @param arr
 	 * @param ele
 	 * @return
 	 */
-	
-	public static int [] removeElementFromArray(int [] arr, int ele) {		
- 		int index = 0;		
-		for(int i = 0; i < arr.length; i ++) {
-			if(arr[i] == ele) {
+
+	public static int[] removeElementFromArray(int[] arr, int ele) {
+		int index = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == ele) {
 				index = i;
 				break;
 			}
 		}
-		
+
 		int len = arr.length;
-		for(int i = index; i < len-1; i++) {		
-			arr[i] = arr[i+1];
-		}	
-		arr[len-1] = 0;	
+		for (int i = index; i < len - 1; i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[len - 1] = 0;
 		return arr;
-		
+
 	}
-	
-	
-	//Method a and b help each other
-	//SumOfDigitsTillSingleDigitRecursion
-	
+
+	// Method a and b help each other
+	// SumOfDigitsTillSingleDigitRecursion
+
 	public static int a(int num) {
-		
-		if(num < 9) {
+
+		if (num < 9) {
 			return num;
 		}
 		int sum = 0;
-	
-		while(num > 0) {
-			
+
+		while (num > 0) {
+
 			sum = sum + num % 10;
-			num /=10;
+			num /= 10;
 		}
-		if(sum > 9) {
+		if (sum > 9) {
 			return b(sum);
 		}
-		
+
 		return sum;
 	}
-	
-	
-	public static int b(int num) {	
-		int sum = 0;	
-		while(num > 0) {	
+
+	public static int b(int num) {
+		int sum = 0;
+		while (num > 0) {
 			sum = sum + num % 10;
-			num /=10;
+			num /= 10;
 		}
-		
+
 		return sum;
 	}
-	
+
 	// This method is same as method = a
 	public static int SumOfDigitsTillSingleDigitRecursion(int num) {
-		
-		if(num < 10) {
+
+		if (num < 10) {
 			return num;
 		}
 		int sum = 0;
-		while(num > 0) {
-			
-			sum = sum + num%10;
-			num = num/ 10;
+		while (num > 0) {
+
+			sum = sum + num % 10;
+			num = num / 10;
 		}
-		
-		return(SumOfDigitsTillSingleDigitRecursion(sum));
+
+		return (SumOfDigitsTillSingleDigitRecursion(sum));
 	}
-	
+
 	/**
-	 * Method name: moveAllZeroToRight
-	 * Method Description: This method will move all zero to the right side
+	 * Method name: moveAllZeroToRight Method Description: This method will move all
+	 * zero to the right side
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	
+
 	public static int[] moveAllZeroToRight(int[] arr) {
 		int[] newArr = new int[arr.length];
 		int index = 0;
@@ -264,272 +365,300 @@ public class PracticeMethods {
 
 		return newArr;
 	}
-	
+
 	/**
-	 * Method name: sumMaximumSubArray
-	 * Link: https://www.youtube.com/watch?v=U4iVyHQQIqA
+	 * Method name: sumMaximumSubArray Link:
+	 * https://www.youtube.com/watch?v=U4iVyHQQIqA
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	
-	public static int sumMaximumSubArray(int [] arr) {		
+
+	public static int sumMaximumSubArray(int[] arr) {
 		int maxSoFar = Integer.MIN_VALUE;
 		int maxEndingHere = 0;
-		for(int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			maxEndingHere = maxEndingHere + arr[i];
-			if(maxSoFar < maxEndingHere) {
+			if (maxSoFar < maxEndingHere) {
 				maxSoFar = maxEndingHere;
 			}
-			if(maxEndingHere < 0) {
+			if (maxEndingHere < 0) {
 				maxEndingHere = 0;
 			}
 		}
-		
+
 		return maxSoFar;
 	}
-	
-	
+
 	/**
-	 * Method name: sumPairs
-	 * Description: This method will print the value which are equals 10
+	 * Method name: sumPairs Description: This method will print the value which are
+	 * equals 10
+	 * 
 	 * @param arr
 	 * @param sum
 	 */
-	
-	public static void sumPaires2(int [] arr, int target) {	
+
+	public static void sumPaires2(int[] arr, int target) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int i = 0; i < arr.length; i++) {
-			
-			if(!map.containsKey(target - arr[i])) {
-				
+		for (int i = 0; i < arr.length; i++) {
+
+			if (!map.containsKey(target - arr[i])) {
+
 				map.put(arr[i], i);
-			}else {
-				System.out.println(target-arr[i] +","+ arr[i]);
+			} else {
+				System.out.println(target - arr[i] + "," + arr[i]);
 			}
 		}
-		
+
 	}
-	
+
 	/**
-	 * Method name: maximumConsecutiveRepeatingCharacter
-	 * description: Given a string, the task is to find maximum consecutive repeating character in string.
-	 *  We do not need to consider overall count, but the count of repeating that appear at one place.
+	 * Method name: maximumConsecutiveRepeatingCharacter description: Given a
+	 * string, the task is to find maximum consecutive repeating character in
+	 * string. We do not need to consider overall count, but the count of repeating
+	 * that appear at one place.
+	 * 
 	 * @param text
 	 * @return
 	 */
-	
+
 	public static char maximumConsecutiveRepeatingCharacter(String text) {
 		char result = 0;
 		int charCount = 1;
 		int count = 0;
-		for (int i = 0; i < text.length(); i ++) {
-			if(i < text.length() - 1 && text.charAt(i) == text.charAt(i+1)) {
+		for (int i = 0; i < text.length(); i++) {
+			if (i < text.length() - 1 && text.charAt(i) == text.charAt(i + 1)) {
 				charCount++;
-				
-			}else {
-				if(charCount > count) {
+
+			} else {
+				if (charCount > count) {
 					count = charCount;
 					result = text.charAt(i);
-					
+
 				}
 				charCount = 1;
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
-	 * Method name : mostCommonCharInString
-	 * Description: This method will help to find the most common char from string  
+	 * Method name : mostCommonCharInString Description: This method will help to
+	 * find the most common char from string
+	 * 
 	 * @param text
 	 * @return
 	 */
 	public static char mostRepeatingCharInString(String text) {
-		char result = 0;		
+		char result = 0;
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-		char [] character = text.replaceAll(" ", "").toCharArray();
-		for(char c: character) {
-			if(!map.containsKey(c)) {
+		char[] character = text.replaceAll(" ", "").toCharArray();
+		for (char c : character) {
+			if (!map.containsKey(c)) {
 				map.put(c, 1);
-			}else {
-				map.put(c, map.get(c)+1);
+			} else {
+				map.put(c, map.get(c) + 1);
 			}
 		}
-		int max = 0;		
-		for(Entry<Character, Integer> m: map.entrySet()) {			
-			if(max < m.getValue()) {			
+		int max = 0;
+		for (Entry<Character, Integer> m : map.entrySet()) {
+			if (max < m.getValue()) {
 				max = m.getValue();
 				result = m.getKey();
 			}
 		}
-			
+
 		return result;
 	}
-	
+
 	/**
-	 * Method Name: getSubstringWithOutRepeatingChar
-	 * Description: This method will return longest substring without repeating char 
+	 * Method Name: getSubstringWithOutRepeatingChar Description: This method will
+	 * return longest substring without repeating char
+	 * 
 	 * @param text
 	 * @return
 	 */
-	
-	public static String getSubstringWithOutRepeatingChar(String text) {		
+
+	public static String getSubstringWithOutRepeatingChar(String text) {
 		String longestTillNow = "";
 		String longestOverAll = "";
 		Set<Character> set = new HashSet<Character>();
-		
-		for(int i = 0; i < text.length(); i++) {
+
+		for (int i = 0; i < text.length(); i++) {
 			char c = text.charAt(i);
-		
-			if(set.contains(c)) {
+
+			if (set.contains(c)) {
 				longestTillNow = "";
 				set.clear();
 			}
 			longestTillNow += c;
 			set.add(c);
-			
-			if(longestTillNow.length() > longestOverAll.length()) {
-				
+
+			if (longestTillNow.length() > longestOverAll.length()) {
+
 				longestOverAll = longestTillNow;
 			}
 		}
-			
+
 		return longestOverAll;
 	}
-	
-	
+
 	/**
-	 * Method name: sumPairs
-	 * Description: This method will print the value which are equals 10
+	 * Method name: sumPairs Description: This method will print the value which are
+	 * equals 10
+	 * 
 	 * @param arr
 	 * @param sum
 	 */
-	public static void sumPairs(int [] arr, int sum) {
-		
+	public static void sumPairs(int[] arr, int sum) {
+
 		Set<Integer> set = new HashSet<Integer>();
-		
-		for(int i = 0; i < arr.length; i++) {
-			
-			if(set.contains(arr[i])) {
-				
-				System.out.println(arr[i] + "," + (sum-arr[i]));
-			}else {
-				
-				set.add(sum-arr[i]);
+
+		for (int i = 0; i < arr.length; i++) {
+
+			if (set.contains(arr[i])) {
+
+				System.out.println(arr[i] + "," + (sum - arr[i]));
+			} else {
+
+				set.add(sum - arr[i]);
 			}
 		}
-		
+
 	}
-	
-	
+
 	/**
-	 * Method name: canBeConvertedToPalindrome
-	 * Description: This method will check whether the string can be converted into plaindrome
+	 * Method name: canBeConvertedToPalindrome Description: This method will check
+	 * whether the string can be converted into plaindrome
+	 * 
 	 * @param text
 	 * @return
 	 */
-	
+
 	public static boolean canBeConvertedToPalindrome(String text) {
 		HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-		char [] character = text.toCharArray();
-		for(char c: character) {
-			if(!map.containsKey(c)) {
+		char[] character = text.toCharArray();
+		for (char c : character) {
+			if (!map.containsKey(c)) {
 				map.put(c, 1);
-			}else {
-				map.put(c, map.get(c)+1);
-			}			
+			} else {
+				map.put(c, map.get(c) + 1);
+			}
 		}
 		boolean hasOdd = false;
-		for(Entry<Character, Integer> m : map.entrySet()) {
-			
-			if(m.getValue() % 2 == 1) {
+		for (Entry<Character, Integer> m : map.entrySet()) {
+
+			if (m.getValue() % 2 == 1) {
 				if (hasOdd) {
-					
+
 					return false;
-				}else {
+				} else {
 					hasOdd = true;
 				}
 			}
 		}
-		
+
 		return true;
 	}
-	
-	
+
 	/**
-	 * Method name:mergeTwoArraySort
-	 * Description: This method will merge two array and sort 
+	 * Method name:mergeTwoArraySort Description: This method will merge two array
+	 * and sort
+	 * 
 	 * @param arr1
 	 * @param arr2
 	 * @return
 	 */
-	public static int [] mergeTwoArraySort(int [] arr1, int [] arr2) {
-		int [] mergeArray = new int[arr1.length + arr2.length]; 		
+	public static int[] mergeTwoArraySort(int[] arr1, int[] arr2) {
+		int[] mergeArray = new int[arr1.length + arr2.length];
 		int c = 0;
-		for(int i =0; i < arr1.length; i ++) {
+		for (int i = 0; i < arr1.length; i++) {
 			mergeArray[i] = arr1[i];
 			c++;
 		}
-		for(int j = 0; j < arr2.length; j++) {
+		for (int j = 0; j < arr2.length; j++) {
 			mergeArray[c++] = arr2[j];
 		}
 		Arrays.sort(mergeArray);
-		
+
 		return mergeArray;
 	}
-	
+
+	// or
+
+	public static int[] mergeArray(int[] arr1, int[] arr2) {
+
+		int[] mergeArray = new int[arr1.length + arr2.length];
+
+		int c = 0;
+
+		for (int i : arr1) {
+			mergeArray[c++] = i;
+		}
+		for (int j : arr2) {
+
+			mergeArray[c++] = j;
+		}
+		Arrays.sort(mergeArray);
+
+		return mergeArray;
+	}
+
 	/**
 	 * Method name: reverseWord2
+	 * 
 	 * @param text
 	 * @return
 	 */
 	public static String reverseWord2(String text) {
 		String reverseWord = "";
-		String [] wordArray = text.split(" ");
-		for(int i = 0; i < wordArray.length; i++) {
+		String[] wordArray = text.split(" ");
+		for (int i = 0; i < wordArray.length; i++) {
 			StringBuilder sb = new StringBuilder(wordArray[i]);
 			sb.reverse();
 			reverseWord = reverseWord.trim() + " " + sb.toString();
 		}
-		
+
 		return reverseWord;
 	}
-	
+
 	/**
-	 * Method name: reverseWord
-	 * Description: This method will reverse every single word of sentence
-	 * Related Method: reverse
+	 * Method name: reverseWord Description: This method will reverse every single
+	 * word of sentence Related Method: reverse
+	 * 
 	 * @param text
 	 * @return
 	 */
 	public static String reverseWord(String text) {
 		String reverseWord = "";
-		
-		String [] wordArray =  text.split(" ");	
-		
-		for(int i = 0; i < wordArray.length; i++) {
-			
+
+		String[] wordArray = text.split(" ");
+
+		for (int i = 0; i < wordArray.length; i++) {
+
 			String value = String.valueOf(wordArray[i]);
-					
-			reverseWord = reverseWord.trim() +" "+ reverse(value);;
+
+			reverseWord = reverseWord.trim() + " " + reverse(value);
+			;
 		}
-		
+
 		return reverseWord;
 	}
-	
-	//This method is developed for reverseWord method
-	public static String reverse (String input) {
+
+	// This method is developed for reverseWord method
+	public static String reverse(String input) {
 		String str = "";
-		for(int i = input.length()-1; i >= 0; i--) {
+		for (int i = input.length() - 1; i >= 0; i--) {
 			str = str + String.valueOf(input.charAt(i));
 		}
 		return str;
 	}
-	
+
 	/**
-	 * Method name : largestProductOfTwoConsecutiveElements
-	 * Description: Given an array, find the largest product of two consecutive elements.
+	 * Method name : largestProductOfTwoConsecutiveElements Description: Given an
+	 * array, find the largest product of two consecutive elements.
+	 * 
 	 * @param arr
 	 * @return
 	 */
@@ -554,201 +683,201 @@ public class PracticeMethods {
 
 		return result;
 	}
-	
+
 	/**
-	 * Method Name:getNearestPalindrome
-	 * Description: This method will help to find nearest palindrome number
-	 * Related Method: reverseIntFGNP
+	 * Method Name:getNearestPalindrome Description: This method will help to find
+	 * nearest palindrome number Related Method: reverseIntFGNP
+	 * 
 	 * @param number
 	 * @return
 	 */
-	
+
 	public static int getNearestPalindrome(int number) {
 		@SuppressWarnings("unused")
 		int nearestPalindrome = 0;
-		int increase = 0; 
+		int increase = 0;
 		int decrecase = 0;
-		while(true) {	
+		while (true) {
 			increase = increase + 1;
 			int num1 = number + increase;
-			if(reverseIntFGNP(num1) == true) {				
-			return	nearestPalindrome = num1;
+			if (reverseIntFGNP(num1) == true) {
+				return nearestPalindrome = num1;
 			}
-			
+
 			else if (reverseIntFGNP(num1) == false) {
 				decrecase = decrecase + 1;
 				int num2 = number - decrecase;
-				if(reverseIntFGNP(num2) == true) {				
+				if (reverseIntFGNP(num2) == true) {
 					return nearestPalindrome = num2;
-					
+
 				}
 			}
 		}
-		
-	
+
 	}
-	
+
 	// This method is used for getNearestPalindrome
-	public static boolean reverseIntFGNP(int num) {		
+	public static boolean reverseIntFGNP(int num) {
 		boolean result = false;
 		int input = num;
 		int reverse = 0;
 		int reminder = 0;
-		while (num != 0) {		
+		while (num != 0) {
 			reminder = num % 10;
 			reverse = reverse * 10 + reminder;
 			num = num / 10;
 		}
-		
-		if(reverse == input) {
+
+		if (reverse == input) {
 			result = true;
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
 	 * Method name: uniqueIntegerArray
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	public static int [] uniqueIntegerArray(int [] arr) {	
+	public static int[] uniqueIntegerArray(int[] arr) {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int i : arr) {		
-			if(!map.containsKey(i)) {
+		for (int i : arr) {
+			if (!map.containsKey(i)) {
 				map.put(i, 1);
-			}else {
-				map.put(i, map.get(i)+1);
+			} else {
+				map.put(i, map.get(i) + 1);
 			}
 		}
 		List<Integer> list = new ArrayList<Integer>();
 		;
-		for(Entry<Integer, Integer> m : map.entrySet()){
-			if(m.getValue() == 1) {
-				list.add(m.getKey()); 
-			}	
+		for (Entry<Integer, Integer> m : map.entrySet()) {
+			if (m.getValue() == 1) {
+				list.add(m.getKey());
+			}
 		}
-		int [] uniqueInteger= new int[list.size()];
-		for(int i = 0; i < list.size(); i++) {
+		int[] uniqueInteger = new int[list.size()];
+		for (int i = 0; i < list.size(); i++) {
 			uniqueInteger[i] = list.get(i);
 		}
-		
+
 		return uniqueInteger;
 	}
-	
+
 	/**
-	 * Method name: reverseIntegerArray
-	 * Description: it will reverse the the array
+	 * Method name: reverseIntegerArray Description: it will reverse the the array
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	public static int [] reverseIntegerArray(int [] arr) {
-		int arrLength = arr.length;	
-		int [] reverse = new int [arrLength];
-		for(int i = 0; i < arrLength; i++) {
-			
-			reverse[i] = arr[arrLength-i-1];
+	public static int[] reverseIntegerArray(int[] arr) {
+		int arrLength = arr.length;
+		int[] reverse = new int[arrLength];
+		for (int i = 0; i < arrLength; i++) {
+
+			reverse[i] = arr[arrLength - i - 1];
 		}
-		
+
 		return reverse;
 	}
 
 	/**
-	 * Method: getMaiden
-	 * Description: Median of two sorted arrays of same size
+	 * Method: getMaiden Description: Median of two sorted arrays of same size
+	 * 
 	 * @param arr1
 	 * @param arr2
 	 * @return
 	 */
 
-	public static int getMaiden(int [] arr1, int [] arr2) {	
+	public static int getMaiden(int[] arr1, int[] arr2) {
 		int maiden = 0;
-		int a1_middle = (0 + arr1.length-1)/2;
-		int a2_middle = (0 + arr2.length-1)/2;
-		
-		maiden = (arr1[a1_middle] + arr2[a2_middle])/2;
-		
+		int a1_middle = (0 + arr1.length - 1) / 2;
+		int a2_middle = (0 + arr2.length - 1) / 2;
+
+		maiden = (arr1[a1_middle] + arr2[a2_middle]) / 2;
+
 		return maiden;
 	}
-	
-	
+
 	/**
-	 * Method name: ANAGRAM
-	 * Link: https://www.youtube.com/watch?v=6HSjG0JogIU
+	 * Method name: ANAGRAM Link: https://www.youtube.com/watch?v=6HSjG0JogIU
+	 * 
 	 * @param str1
 	 * @param str2
 	 * @return
 	 */
-	
+
 	public static boolean isAnagram(String str1, String str2) {
 		boolean result = false;
-		
-		char [] word1 = str1.toLowerCase().replaceAll(" ", "").toCharArray();
-		
-		char [] word2 = str2.toLowerCase().replaceAll(" ", "").toCharArray();
-		
+
+		char[] word1 = str1.toLowerCase().replaceAll(" ", "").toCharArray();
+
+		char[] word2 = str2.toLowerCase().replaceAll(" ", "").toCharArray();
+
 		Arrays.sort(word1);
 		Arrays.sort(word2);
-		
-		if(Arrays.equals(word1, word2)) {
+
+		if (Arrays.equals(word1, word2)) {
 			result = true;
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
-	 * Method name: moveDuplicateToAnArray
-	 * description: Given an array of integers, how would you move the duplicate integers into a different array?
+	 * Method name: moveDuplicateToAnArray description: Given an array of integers,
+	 * how would you move the duplicate integers into a different array?
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	
-	public static int [] moveDuplicateToAnArray(int [] arr) {			
+
+	public static int[] moveDuplicateToAnArray(int[] arr) {
 		HashSet<Integer> set = new HashSet<Integer>();
 		List<Integer> list = new ArrayList<Integer>();
-		for(int i : arr) {	
-			if(!set.contains(i)) {
-				set.add(i);				
-			}else {				
+		for (int i : arr) {
+			if (!set.contains(i)) {
+				set.add(i);
+			} else {
 				list.add(i);
 			}
 		}
-		int [] dupValuArray = new int[list.size()];		
-		for(int i = 0; i < list.size(); i++) {			
+		int[] dupValuArray = new int[list.size()];
+		for (int i = 0; i < list.size(); i++) {
 			dupValuArray[i] = list.get(i);
-		}		
+		}
 		return dupValuArray;
 	}
-	
+
 	/**
 	 * Method : getLargestNumFromArray
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	public static int getLargestNumFromArray(int [] arr) {
+	public static int getLargestNumFromArray(int[] arr) {
 		int largNum = arr[0];
-		for(int i = 0; i < arr.length; i ++) {
-			
-			if(largNum < arr[i]) {
-				
+		for (int i = 0; i < arr.length; i++) {
+
+			if (largNum < arr[i]) {
+
 				largNum = arr[i];
 			}
 		}
-		
-		
+
 		return largNum;
 	}
-	
-	
+
 	/**
-	 * Method name: findUniou
-	 * Description: It will sort out the string and make the string unique 
+	 * Method name: findUniou Description: It will sort out the string and make the
+	 * string unique
+	 * 
 	 * @param text1
 	 * @param text2
 	 * @return
 	 */
-	
+
 	public static String findUniou(String text1, String text2) {
 		String union = "";
 		String addString = text1.concat(text2);
@@ -762,166 +891,168 @@ public class PracticeMethods {
 
 		return union;
 	}
-	
-	
+
 	/**
-	 * Method name: getSecondLagestNumFromArray
-	 * Description: it will find the second largest num from array
+	 * Method name: getSecondLagestNumFromArray Description: it will find the second
+	 * largest num from array
+	 * 
 	 * @param arr
 	 * @return
-	 */	
-	
-	public static int getSecondLagestNumFromArray(int [] arr) {
+	 */
+
+	public static int getSecondLagestNumFromArray(int[] arr) {
 		int highest = Integer.MIN_VALUE;
-		int secondHighest = Integer.MIN_VALUE;		
-		for(int i = 0 ; i < arr.length; i++) {		
-			if(arr[i]> highest) {
+		int secondHighest = Integer.MIN_VALUE;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > highest) {
 				secondHighest = highest;
-				System.out.println("second: "+ secondHighest);
-				highest = arr[i];				
-			}else if (arr[i]> secondHighest) {
-				
+				System.out.println("second: " + secondHighest);
+				highest = arr[i];
+			} else if (arr[i] > secondHighest) {
+
 				secondHighest = arr[i];
 			}
 		}
-		
+
 		return secondHighest;
 	}
-	
+
 	/**
-	 * Method name: getUserOccurrences
-	 * Description: write a program where a there are multiple users logging  into the system or file and I want
-	 *  to know the login Occurrences of the each user . Note : The file is separated by the commas. ex: User1 , User2, user1 , user3.........
+	 * Method name: getUserOccurrences Description: write a program where a there
+	 * are multiple users logging into the system or file and I want to know the
+	 * login Occurrences of the each user . Note : The file is separated by the
+	 * commas. ex: User1 , User2, user1 , user3.........
+	 * 
 	 * @param users
 	 * @return
 	 */
-	
-	public static Map<String, Integer> getUserOccurrences(String users){
-		
+
+	public static Map<String, Integer> getUserOccurrences(String users) {
+
 		Map<String, Integer> userOccurances = new HashMap<String, Integer>();
-		String [] usr = users.toLowerCase().split(",");	
-		for (String u : usr) {		
-			if (!userOccurances.containsKey(u)) {			
+		String[] usr = users.toLowerCase().split(",");
+		for (String u : usr) {
+			if (!userOccurances.containsKey(u)) {
 				userOccurances.put(u, 1);
-			}else {			
-				userOccurances.put(u,userOccurances.get(u)+1);
-			}			
-		}				
+			} else {
+				userOccurances.put(u, userOccurances.get(u) + 1);
+			}
+		}
 		return userOccurances;
 	}
-	
-	
+
 	/**
-	 * Method name: removeDupDisplayDup
-	 * Description: Amazon interview question --> remove duplicate from list and return duplicate 
+	 * Method name: removeDupDisplayDup Description: Amazon interview question -->
+	 * remove duplicate from list and return duplicate
+	 * 
 	 * @param numList
 	 * @return
 	 */
-	
-	public static List<Integer> removeDupDisplayDup(List<Integer> numList){		
+
+	public static List<Integer> removeDupDisplayDup(List<Integer> numList) {
 		List<Integer> dupList = new ArrayList<Integer>();
-		HashSet<Integer> set = new HashSet<Integer>();		
-		for(int i : numList) {
-			if(!set.contains(i)) {				
+		HashSet<Integer> set = new HashSet<Integer>();
+		for (int i : numList) {
+			if (!set.contains(i)) {
 				set.add(i);
-			}else {
+			} else {
 				dupList.add(i);
 			}
-		}				
+		}
 		return dupList;
 	}
-	
-	
+
 	/**
-	 * Method name: duplicateNumber
-	 * Description: This method will return duplicate number 
+	 * Method name: duplicateNumber Description: This method will return duplicate
+	 * number
+	 * 
 	 * @param arr
 	 * @return
 	 */
-	
-	public static int [] duplicateNumber(int [] arr) {
-		
+
+	public static int[] duplicateNumber(int[] arr) {
+
 		List<Integer> list = new ArrayList<Integer>();
-		
+
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int a : arr) {
-			
-			if(!map.containsKey(a)) {
-				
+		for (int a : arr) {
+
+			if (!map.containsKey(a)) {
+
 				map.put(a, 1);
-			}else {
-				
-				map.put(a, map.get(a)+1);
+			} else {
+
+				map.put(a, map.get(a) + 1);
 			}
 		}
-		
-		for(Entry<Integer, Integer> m : map.entrySet()) {
-			
-			if(m.getValue() > 1) {
-				
+
+		for (Entry<Integer, Integer> m : map.entrySet()) {
+
+			if (m.getValue() > 1) {
+
 				list.add(m.getKey());
 			}
 		}
-		int [] duplicateNum = new int [list.size()];
-		
-		for(int i = 0; i < list.size(); i ++) {
-			
-			duplicateNum[i]=list.get(i);
+		int[] duplicateNum = new int[list.size()];
+
+		for (int i = 0; i < list.size(); i++) {
+
+			duplicateNum[i] = list.get(i);
 		}
-		
+
 		return duplicateNum;
 	}
-	
+
 	/**
-	 * Method: missingNumberFromTwoArray2
-	 * Description: This method will help to find what are the missing values is array2 from array1
+	 * Method: missingNumberFromTwoArray2 Description: This method will help to find
+	 * what are the missing values is array2 from array1
+	 * 
 	 * @param arr1
 	 * @param arr2
 	 * @return
 	 */
-	public static List<Integer> missingNumberFromTwoArray2(int [] arr1, int[] arr2) {		
-		List<Integer> missValue = new ArrayList<Integer>();	
+	public static List<Integer> missingNumberFromTwoArray2(int[] arr1, int[] arr2) {
+		List<Integer> missValue = new ArrayList<Integer>();
 		HashSet<Integer> set = new HashSet<Integer>();
-		for(int a1 : arr1) {
+		for (int a1 : arr1) {
 			set.add(a1);
-		}		
-		for (int i : arr2) {			
-			if(!set.contains(i)) {			
+		}
+		for (int i : arr2) {
+			if (!set.contains(i)) {
 				missValue.add(i);
 			}
 		}
-		
+
 		// Those line of code required if i want to print value using array
-		int [] value = new int [missValue.size()];		
-		for(int i = 0; i < missValue.size(); i++) {			
-			value[i] = missValue.get(i);				
+		int[] value = new int[missValue.size()];
+		for (int i = 0; i < missValue.size(); i++) {
+			value[i] = missValue.get(i);
 		}
-		System.out.println("Printing Missing value using Array: "+ Arrays.toString(value));
-		
+		System.out.println("Printing Missing value using Array: " + Arrays.toString(value));
+
 		return missValue;
 	}
-	
-	
-	public static int missingNumberFromTwoArray(int [] arr1, int [] arr2) {		
-		int  missingValue = 0;
+
+	public static int missingNumberFromTwoArray(int[] arr1, int[] arr2) {
+		int missingValue = 0;
 		int sum1 = 0;
 		int sum2 = 0;
-		for(int i = 0; i < arr1.length; i++) {
-			sum1 = sum1+ arr1[i];
+		for (int i = 0; i < arr1.length; i++) {
+			sum1 = sum1 + arr1[i];
 		}
-		for(int j = 0; j < arr2.length; j++) {
-			sum2 = sum2+ arr2[j];
+		for (int j = 0; j < arr2.length; j++) {
+			sum2 = sum2 + arr2[j];
 		}
-		if (sum1 - sum2 >= 0 ) {
+		if (sum1 - sum2 >= 0) {
 			missingValue = sum1 - sum2;
-		}else if (sum1 - sum2 < 0) {
-			
+		} else if (sum1 - sum2 < 0) {
+
 			missingValue = sum2 - sum1;
 		}
-		
+
 		return missingValue;
 	}
-	
+
 	/**
 	 * Method name: getNumPalindrom
 	 * 
@@ -934,44 +1065,41 @@ public class PracticeMethods {
 		int input = num;
 		int reminder = 0;
 		int reverseNum = 0;
-		while(num != 0) {
+		while (num != 0) {
 			reminder = num % 10;
 			reverseNum = reverseNum * 10 + reminder;
-			num = num/10;
+			num = num / 10;
 		}
-		
-		if(input == reverseNum) {
+
+		if (input == reverseNum) {
 			result = true;
 		}
-		
+
 		return result;
 	}
-	
-	
+
 	/**
-	 * Method Name: reverseInt
-	 * Link: https://www.youtube.com/watch?v=xf9z_MszHJ0
+	 * Method Name: reverseInt Link: https://www.youtube.com/watch?v=xf9z_MszHJ0
+	 * 
 	 * @param num
 	 * @return
 	 */
-	
-	public static int reverseInt (int num) {
+
+	public static int reverseInt(int num) {
 		int reverse = 0;
 		int reminder = 0;
-		
-		while(num != 0) {
-			
-			reminder = num%10;
+
+		while (num != 0) {
+
+			reminder = num % 10;
 			reverse = reverse * 10 + reminder;
-			num = num/10;
-			
+			num = num / 10;
+
 		}
-		
-		
+
 		return reverse;
 	}
-	
-	
+
 	/**
 	 * Method name: intersection Description: This method will help to find common
 	 * number between two array
@@ -1209,8 +1337,6 @@ public class PracticeMethods {
 
 		return missingValue;
 	}
-
-
 
 	/**
 	 * Method name: getPalindrom Description: It will check string is same from both
