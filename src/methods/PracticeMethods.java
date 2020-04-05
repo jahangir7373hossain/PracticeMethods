@@ -161,8 +161,161 @@ public class PracticeMethods {
 		
 		int [] missArra = {4,3,2,7,8,2,3,1};
 		System.out.println(findDisappearedNumber(missArra));
+		
+
+		int plusonearr[] = {1,2,9}; // or {9,9,9} // or{1,2,3}
+		System.out.println(Arrays.toString(plusOne(plusonearr)));
+		
+		
+		int [] arrPair = {1,4,3,2};
+		System.out.println("arrayPairSum : "+ arrayPairSum(arrPair));
+		
+		System.out.println("getEncrypted: " + getEncrypted("jahangir"));	
+		
+		int[] arratc = { 8,1,2,2,3};
+		System.out.println("smallerNumbersThanCurrent: " + Arrays.toString(smallerNumbersThanCurrent(arratc)));
+		
+		System.out.println("removePalindromeSub: " + removePalindromeSub("bab"));
+		
+		int [] arrmcn = {1,1,0,1,1,1};
+		
+		System.out.println(mostConsecutiveNum(arrmcn));
+
+	}
+	/**
+	 * Method name: mostConsecutiveNum
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int mostConsecutiveNum(int [] arr) {
+		int count = 0;
+		int currCount = 1;
+		
+		for (int i = 0; i < arr.length-1; i++) {
+			
+			if(arr[i] == arr[i+1]) {
+				
+				currCount++;
+			}
+			
+			if(currCount > count) {
+				count = currCount;
+				currCount = 1;
+			}
+			
+		}
+		return count;
 	}
 	
+	public static int removePalindromeSub(String s) {
+        if(s.length()==0){
+            return 0;
+        }
+        
+        if(isPali(s)){
+            return 1;
+        }
+        
+        return 2;
+    }
+	
+	public static boolean isPali(String text) {
+		boolean result = false;
+		String str = "";
+		for(int i = text.length()-1; i >= 0; i--) {
+			str = str + text.charAt(i);
+		}
+		if(str.equalsIgnoreCase(text)) {
+			result = false;
+		}
+		return result;
+	}
+	
+	/**
+	 * Method name :smallerNumbersThanCurrent
+	 * Method des: Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. 
+	 * That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
+	 * @param arratc
+	 * @return
+	 */
+	
+	public static int [] smallerNumbersThanCurrent(int [] arratc) {
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		int [] clone = arratc.clone();
+		Arrays.sort(arratc);
+		for(int i = 0; i < arratc.length; i++) {
+			if(!map.containsKey(arratc[i])) {
+				map.put(arratc[i], i);
+			}
+		}
+		int [] result = new int[arratc.length];
+		for(int i = 0; i < clone.length; i++) {
+			result[i] = map.get(clone[i]);
+		}
+		return result;
+	}
+	
+	/**
+	 * Method name: getEncrypted
+	 * description: This method will convert regular text in encrypted text
+	 * @param text
+	 * @return
+	 */
+	
+	public static String getEncrypted(String text) {
+		String value =  "abcdefghijklmnopqrstuvwxyz";
+		String key = "ABF5REWIOPLJ583ZX5BGTH6403";
+		
+		String encrypted = "";
+		for(int i = 0; i < text.length(); i++) {
+			int position = value.indexOf(text.charAt(i));
+			if(position != -1) {
+				char c = key.charAt(position);
+				encrypted = encrypted + c;
+			}
+		}
+		return encrypted;
+		
+	}
+	
+	/**
+	 * Array partition
+	 * Method name: arrayPairSum
+	 * Description: Given an array of 2n integers, your task is to group these integers into n pairs of integer,
+	 *  say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int arrayPairSum(int [] arr) {
+		int sum = 0;
+		Arrays.sort(arr);
+		for(int i = 0; i < arr.length; i = i + 2) {		
+			sum = sum + arr[i];
+		}	
+		return sum;
+	}
+	
+	/**
+	 * Method name: plusOne
+	 * description: Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
+     The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
+	 * @param arr
+	 * @return
+	 */
+	public static int [] plusOne(int [] arr) {
+		for(int i = arr.length-1; i >= 0; i--) {
+			if(arr[i] < 9) {
+				arr[i]++;
+				return arr;
+			}
+			arr[i] = 0;
+		}
+		int [] result = new int[arr.length+1];
+		result[0] = 1;
+		return result;
+	}
 	
 	/**
 	 * Method Name: findDisappearedNumber
@@ -1198,6 +1351,24 @@ public class PracticeMethods {
 	 */
 
 	public static int getMinDistance(int[] arr) {
+		
+//		int [] a = new int [2];
+//	       int indexOne = 0;
+//	       int indexTwo = 0;
+//	       Arrays.sort(arr);
+//	       int minDis = arr[1] - arr[0];
+//	       for(int i = 0; i < arr.length-1; i++){
+//	           if(minDis > arr[i+1] - arr[i]){
+//	               minDis = arr[i+1] - arr[i];
+//	               a[0] =  arr[i];
+//	               a[1] = arr[i+1];
+//	           }
+//	       }
+//	      
+//	       System.out.println("Minmum distance is: " + minDis);
+//	       return a;
+//	   }
+	
 		int distance = 0;
 		Arrays.sort(arr);
 		int index_1 = 0;
