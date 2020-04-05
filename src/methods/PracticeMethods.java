@@ -180,8 +180,47 @@ public class PracticeMethods {
 		int [] arrmcn = {1,1,0,1,1,1};
 		
 		System.out.println(mostConsecutiveNum(arrmcn));
+		
+		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","makes","makes"));
+
 
 	}
+	
+	/*
+	 * Method name: sortestWordDistance
+	 * Description: This method will help to find the shortest distance between two word
+	 * 
+	 */
+	
+	public static int sortestWordDistance(String text, String str1, String str2) {
+		int sortestDis = 0;
+		int index1 = 0;
+		int index2 = 0;
+		String [] wordArray = text.split(" ");
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for(int i = 0; i < wordArray.length; i++) {
+			if(!map.containsKey(wordArray[i])) {
+				map.put(wordArray[i], 1);
+				if(wordArray[i].equalsIgnoreCase(str1)) {
+					index1 = i;
+				}
+			}else {
+				map.put(wordArray[i], map.get(wordArray[i])+1);
+				if(wordArray[i].equalsIgnoreCase(str2)) {
+					index2 = i;
+				}
+			}
+		}
+		sortestDis = index2 - index1;
+		//if index 2 smaller that index1 then below code will run
+		if(sortestDis < 0) {
+			sortestDis = index1 - index2;
+		}
+		
+		return sortestDis;
+	}
+	
+	
 	/**
 	 * Method name: mostConsecutiveNum
 	 * @param arr
