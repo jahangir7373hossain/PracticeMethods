@@ -181,7 +181,7 @@ public class PracticeMethods {
 		
 		System.out.println(mostConsecutiveNum(arrmcn));
 		
-		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","practice","coding"));
+		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","practice","makes"));
 
 
 	}
@@ -205,6 +205,7 @@ public class PracticeMethods {
 					index1 = i+1;
 				}else if(wordArray[i].equalsIgnoreCase(str2)) {
 					index2 = i+1;
+					break;
 				}
 			}else {
 				map.put(wordArray[i], map.get(wordArray[i])+1);
