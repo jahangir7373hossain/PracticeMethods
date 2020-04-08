@@ -182,8 +182,33 @@ public class PracticeMethods {
 		System.out.println(mostConsecutiveNum(arrmcn));
 		
 		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","practice","makes"));
+		
+		int [] arrlcis = {2,2,2,2,2};  // or 1,3,5,4,7
+		System.out.println("longestContinuousIncreasingSubsequence: "+ longestContinuousIncreasingSubsequence(arrlcis));
 
-
+	}
+	
+	/**
+	 * Method name : longestContinuousIncreasingSubsequence
+	 * Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3. 
+                    Even though [1,3,5,7] is also an increasing subsequence, it's not a continuous one where 5 and 7 are separated by 4. 
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int longestContinuousIncreasingSubsequence(int [] arr) {
+		int longestOverAll = 0;
+		int longestTillNow = 0;
+		for(int i = 0; i < arr.length-1; i++) {
+			if(arr[i] < arr[i+1]) {
+				longestTillNow++;
+				longestOverAll = Math.max(longestOverAll, longestTillNow);
+			}else {
+				longestOverAll = 1;
+			}
+		}
+		
+		return longestOverAll;
 	}
 	
 	/*
