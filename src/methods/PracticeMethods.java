@@ -177,9 +177,9 @@ public class PracticeMethods {
 		
 		System.out.println("removePalindromeSub: " + removePalindromeSub("bab"));
 		
-		int [] arrmcn = {1,1,0,1,1,1};
+		int [] arrmcn = {8,1,1,1,1,2,2,3};
 		
-		System.out.println(mostConsecutiveNum(arrmcn));
+		System.out.println("mostConsecutiveNum: " + mostConsecutiveNum(arrmcn));
 		
 		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","practice","makes"));
 		
@@ -258,19 +258,18 @@ public class PracticeMethods {
 	public static int mostConsecutiveNum(int [] arr) {
 		int count = 0;
 		int currCount = 1;
-		
-		for (int i = 0; i < arr.length-1; i++) {
-			
-			if(arr[i] == arr[i+1]) {
-				
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] == arr[i + 1]) {
 				currCount++;
-			}
-			
-			if(currCount > count) {
-				count = currCount;
+			} else {
+				if (currCount > count) {
+					count = currCount;					
+				}
 				currCount = 1;
 			}
-			
+		}
+		if(currCount > count) {
+			count = currCount;
 		}
 		return count;
 	}
