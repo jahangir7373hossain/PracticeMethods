@@ -205,6 +205,7 @@ public class PracticeMethods {
 				longestOverAll = Math.max(longestOverAll, longestTillNow);
 			}else {
 				longestOverAll = 1;
+				longestTillNow = 0;
 			}
 		}
 		
