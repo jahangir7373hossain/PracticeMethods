@@ -185,7 +185,31 @@ public class PracticeMethods {
 		
 		int [] arrlcis = {2,2,2,2,2};  // or 1,3,5,4,7
 		System.out.println("longestContinuousIncreasingSubsequence: "+ longestContinuousIncreasingSubsequence(arrlcis));
-
+		
+		int[] arrbtbss = {7,1,5,3,6,4 };
+		System.out.println("bestTimetoBuyandSellStock: " + bestTimetoBuyandSellStock(arrbtbss));
+	}
+	
+	
+	/**
+	 * Method name : bestTimetoBuyandSellStock (LeetCode)
+	 * Description: 
+	 * @param arr
+	 * @return
+	 */
+	public static int bestTimetoBuyandSellStock(int [] arr) {
+		int maxPrice = 0;
+		int minPrice = Integer.MAX_VALUE;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] < minPrice) {
+				minPrice = arr[i];
+			}else {
+				if(maxPrice < arr[i] - minPrice) {
+					maxPrice = arr[i] - minPrice;
+				}
+			}
+		}
+		return maxPrice;
 	}
 	
 	/**
