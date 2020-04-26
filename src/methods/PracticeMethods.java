@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class PracticeMethods {
@@ -96,7 +97,7 @@ public class PracticeMethods {
 		System.out.println(getUserOccurrences("User1,User2,user1,user3,user2,user3,user1"));
 		int[] secondLagArray = { 75, 88, 44, 55 };
 		System.out.println(getSecondLagestNumFromArray(secondLagArray));
-		System.out.println("findUniou: " + findUniou("usha", "asha"));
+		System.out.println("getUnion: " + getUnion("usha", "asha"));
 
 		int[] lagArray = { 75, 88, 44, 55 };
 		System.out.println("getLargestNumFromArray: " + getLargestNumFromArray(lagArray));
@@ -147,7 +148,7 @@ public class PracticeMethods {
 		int[] xy = { 4, 2, 3, 5, 7 };
 		System.out.println("removeElementFromArray: " + Arrays.toString(removeElementFromArray(xy, 3)));
 
-		int[] productarr = { -2, -3, 0, -2, -40 };
+		int[] productarr = {-2, -3, 0, -2, -40};
 
 		// {-2, -3, 0, -2, -40};
 		System.out.println(maxProductArray(productarr));
@@ -172,7 +173,7 @@ public class PracticeMethods {
 		
 		System.out.println("getEncrypted: " + getEncrypted("jahangir"));	
 		
-		int[] arratc = { 8,1,2,2,3};
+		int[] arratc = {8,1,2,2,3};
 		System.out.println("smallerNumbersThanCurrent: " + Arrays.toString(smallerNumbersThanCurrent(arratc)));
 		
 		System.out.println("removePalindromeSub: " + removePalindromeSub("bab"));
@@ -181,15 +182,42 @@ public class PracticeMethods {
 		
 		System.out.println("mostConsecutiveNum: " + mostConsecutiveNum(arrmcn));
 		
-		System.out.println("sortestWordDistance: " + sortestWordDistance("practice makes perfect coding makes","practice","makes"));
+		System.out.println("sortestWordDistance: " + minmumWordDis("practice makes perfect coding makes","perfect","makes"));
 		
 		int [] arrlcis = {2,2,2,2,2};  // or 1,3,5,4,7
 		System.out.println("longestContinuousIncreasingSubsequence: "+ longestContinuousIncreasingSubsequence(arrlcis));
 		
 		int[] arrbtbss = {7,1,5,3,6,4 };
 		System.out.println("bestTimetoBuyandSellStock: " + bestTimetoBuyandSellStock(arrbtbss));
+		
+	     int arru1[] = {7, 1, 5, 2, 3, 6}; 
+	     int arru2[] = {3, 8, 6, 20, 7};
+	     System.out.println(Arrays.toString(getArrayUnion(arru1,arru2)));
+
 	}
-	
+	/**
+	 * MethodName: getArrayUnion
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	 public static int [] getArrayUnion(int [] arr1, int [] arr2){
+	      Set<Integer> set1 = new TreeSet<Integer>();
+	      for(int i: arr1){
+	          set1.add(i);
+	    }
+	     for(int i : arr2){
+	        if(!set1.contains(i)){
+	             set1.add(i);
+	         }
+	     }
+	      int[] result =new int [set1.size()];
+	      int c = 0;
+	      for(int i: set1){
+	          result[c++] = i;
+	      }
+	      return result;
+	  }
 	
 	/**
 	 * Method name : bestTimetoBuyandSellStock (LeetCode)
@@ -241,6 +269,30 @@ public class PracticeMethods {
 	 * Description: This method will help to find the shortest distance between two word
 	 * 
 	 */
+	
+	public static int minmumWordDis(String text, String str1, String str2) {
+		String [] words = text.split(" ");
+		int minDis = 0;
+		int p1 = 0;
+		int p2 = 0;
+		
+		for(int i = 0; i < words.length; i++) {
+			if(words[i].equalsIgnoreCase(str1)) {
+				p1 = i;
+			}
+			if(words[i].equalsIgnoreCase(str2)) {
+				p2 = i;
+			}
+			
+		}
+		
+		 if(p1 > p2) {
+	        	minDis = p1 - p2;
+	        }else if(p2 > p1) {
+	        	minDis = p2- p1;
+	        }
+		return minDis;
+	}
 	
 	public static int sortestWordDistance(String text, String str1, String str2) {
 		int sortestDis = 0;
@@ -814,7 +866,20 @@ public class PracticeMethods {
 	 * @param arr2
 	 * @return
 	 */
-	public static int[] mergeTwoArraySort(int[] arr1, int[] arr2) {
+	  public static int [] mergeTwoArraySort(int [] arr1, int [] arr2){
+	       int [] newArray = new int[arr1.length+arr2.length];
+	       int c = 0;
+	       for(int i: arr1){
+	           newArray[c++] = i;
+	        }
+	       for(int i: arr2){
+	           newArray[c++] = i;
+	       }
+	       Arrays.sort(newArray);
+	       return newArray;
+	   }
+	
+	public static int[] mergeTwoArraySortold(int[] arr1, int[] arr2) {
 		int[] mergeArray = new int[arr1.length + arr2.length];
 		int c = 0;
 		for (int i = 0; i < arr1.length; i++) {
@@ -1121,6 +1186,21 @@ public class PracticeMethods {
 	 * @param text2
 	 * @return
 	 */
+	 public static String getUnion(String text1, String text2){
+	        String union = "";
+	        String newText = text1.concat(text2);
+	        char[] ch = newText.toCharArray();
+	        Map<Character, Integer> map = new TreeMap<Character, Integer>();
+	        for(char c : ch){
+	            if(!map.containsKey(c)){
+	               map.put(c, 1); 
+	            }
+	        }
+	        for(Entry<Character, Integer> m: map.entrySet()){
+	            union = union + String.valueOf(m.getKey());
+	        }
+	        return union;
+	    }
 
 	public static String findUniou(String text1, String text2) {
 		String union = "";
