@@ -184,7 +184,7 @@ public class PracticeMethods {
 		
 		System.out.println("sortestWordDistance: " + minmumWordDis("practice makes perfect coding makes","perfect","makes"));
 		
-		int [] arrlcis = {2,2,2,2,2};  // or 1,3,5,4,7
+		int [] arrlcis = {1,3,5,4,7};  // or 1,3,5,4,7
 		System.out.println("longestContinuousIncreasingSubsequence: "+ longestContinuousIncreasingSubsequence(arrlcis));
 		
 		int[] arrbtbss = {7,1,5,3,6,4 };
@@ -196,7 +196,7 @@ public class PracticeMethods {
 
 	}
 	/**
-	 * MethodName: getArrayUnion
+	 * MethodName: getArrayUnionstatus 
 	 * @param arr1
 	 * @param arr2
 	 * @return
@@ -248,22 +248,25 @@ public class PracticeMethods {
 	 * @return
 	 */
 	
-	public static int longestContinuousIncreasingSubsequence(int [] arr) {
+	public static int longestContinuousIncreasingSubsequence(int[] arr) {
 		int longestOverAll = 0;
-		int longestTillNow = 0;
-		for(int i = 0; i < arr.length-1; i++) {
-			if(arr[i] < arr[i+1]) {
+		int longestTillNow = 1;
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] < arr[i + 1]) {
 				longestTillNow++;
-				longestOverAll = Math.max(longestOverAll, longestTillNow);
-			}else {
-				longestOverAll = 1;
-				longestTillNow = 0;
+			} else {
+				if (longestTillNow > longestOverAll) {
+					longestOverAll = longestTillNow;
+				}
+				longestTillNow = 1;
 			}
 		}
-		
+		if (longestOverAll == 0) {
+			longestOverAll = longestTillNow;
+		}
 		return longestOverAll;
 	}
-	
+
 	/*
 	 * Method name: sortestWordDistance
 	 * Description: This method will help to find the shortest distance between two word
