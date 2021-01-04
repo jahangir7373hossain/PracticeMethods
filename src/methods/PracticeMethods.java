@@ -2,12 +2,14 @@ package methods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -26,16 +28,16 @@ public class PracticeMethods {
 		System.out.println("List of prime number: " + primeNumberList(36));
 		System.out.println("Is Prime number: " + isPrime(11));
 		System.out.println("getFactorNumList: " + getFactorNumList(4));
-		System.out.println("primeFactors: " + primeFactors(36));
+		
 
-		System.out.println(getPrimeFactor(5));
+		System.out.println("getPrimefactorization: " + getPrimefactorization(36));
 
 		System.out.println("getLengthOfLastWord: " + getLengthOfLastWord("my name is john"));
-		int[] numArray = { 1, 1, 2, 2, 8 };
+		int[] numArray = {1, 1, 2, 2, 8};
 
 		System.out.println(Arrays.toString(removeDuplicates(numArray)));
 
-		int[] num = { 1, 2, 8, 5, 9, 2, 6, 1, 8 };
+		int[] num = { 1, 2, 8, 5, 9, 2, 6, 1, 8};
 		System.out.println("removeDupFromSortArray: " + removeDupFromSortArray(num));
 
 		int[] arre = { 2, 7, 11, 15 };
@@ -58,7 +60,7 @@ public class PracticeMethods {
 
 		System.out.println("getFactorial2: " + getFactorial2(5));
 		System.out.println("getArmstrongNumber: " + getArmstrongNumber(153));
-		System.out.println("getPerfectNum: " + getPerfectNum(496));
+		System.out.println("getPerfectNum: " + isPerfectNum(496));
 
 		int[] nums = { 61, 68, 55, 50, 69, 100 };
 		getMinDistance(nums);
@@ -94,7 +96,7 @@ public class PracticeMethods {
 		numList.add(60);
 		numList.add(11);
 		System.out.println("removeDupDisplayDuo: " + removeDupDisplayDup(numList));
-		System.out.println(getUserOccurrences("User1,User2,user1,user3,user2,user3,user1"));
+		
 		int[] secondLagArray = { 75, 88, 44, 55 };
 		System.out.println(getSecondLagestNumFromArray(secondLagArray));
 		System.out.println("getUnion: " + getUnion("usha", "asha"));
@@ -104,10 +106,11 @@ public class PracticeMethods {
 
 		int[] dupArray1 = { 2, 9, 3, 4, 7, 3, 9, 55, 33, 44, 33, 20, 9 };
 		System.out.println("moveDuplicateToAnArray: " + Arrays.toString(moveDuplicateToAnArray(dupArray1)));
-		System.out.println(isAnagram("Hello world", "world hello"));
+		 
+		System.out.println("isAnagram: " + isAnagram("hello world", "hlleo world"));
 
-		int[] a1 = { 1, 12, 15, 26, 38 };
-		int[] a2 = { 2, 13, 17, 30, 45 };
+		int[] a1 = {1, 12, 15, 26, 38};
+		int[] a2 = {2, 13, 17, 30, 45};
 		System.out.println("getMaiden: " + getMaiden(a1, a2));
 		System.out.println("reverseIntegerArray: " + Arrays.toString(reverseIntegerArray(a1)));
 
@@ -182,19 +185,1130 @@ public class PracticeMethods {
 		
 		System.out.println("mostConsecutiveNum: " + mostConsecutiveNum(arrmcn));
 		
-		System.out.println("sortestWordDistance: " + minmumWordDis("practice makes perfect coding makes","perfect","makes"));
 		
 		int [] arrlcis = {1,3,5,4,7};  // or 1,3,5,4,7
 		System.out.println("longestContinuousIncreasingSubsequence: "+ longestContinuousIncreasingSubsequence(arrlcis));
 		
-		int[] arrbtbss = {7,1,5,3,6,4 };
+		int[] arrbtbss = { 7, 1, 5, 3, 6, 4 };
 		System.out.println("bestTimetoBuyandSellStock: " + bestTimetoBuyandSellStock(arrbtbss));
+
+		int arru1[] = { 7, 1, 5, 2, 3, 6 };
+		int arru2[] = { 3, 8, 6, 20, 7 };
+		System.out.println(Arrays.toString(getArrayUnion(arru1, arru2)));
+
+		int[] arrpn = { -1, 6, 9, -4, -10, 8 };
+		System.out.println(Arrays.toString(sortPositiveNegative(arrpn)));
+
+		Map<String, String> map2 = new HashMap<String, String>();
+		map2.put("Java", "John");
+		map2.put("C#", "Rob");
+		map2.put("Ruby", "John");
+		map2.put("Rails", "Rob");
+
+		System.out.println("getAuthorAndBook: " + getAuthorAndBook(map2));
+
+		System.out.println("mixString: " + mixString("abc", "efg"));
+		System.out.println("largestSubString: " + largestSubString("Happy%^&new!@(year"));
+
+		List<Integer> l1 = new ArrayList<Integer>();
+		l1.add(1);
+		l1.add(1);
+		l1.add(3);
+		l1.add(3);
+		l1.add(4);
+		l1.add(1);
+		System.out.println("notInCorrectPoint: " + notInCorrectPoint(l1));
 		
-	     int arru1[] = {7, 1, 5, 2, 3, 6}; 
-	     int arru2[] = {3, 8, 6, 20, 7};
-	     System.out.println(Arrays.toString(getArrayUnion(arru1,arru2)));
+		int[] arrm11 = {1,1,3};
+        int[] arrm22 = {2,4,6,8};
+		
+        System.out.println(Arrays.toString(margeArrayTo3rdArray(arrm11,arrm22)));
+        
+    	int[] arrmcon = {1,1,0,0,0,0,1,1,1,1,1};
+        System.out.println("mosConAParticularNum: " + mosConAParticularNum(arrmcon, 1));
+        
+        int[] arrmdbp = {101,-113,1,45,78,-2,-3,7};
+        System.out.println("getMinDiffBetweenPrimes: "+ getMinDiffBetweenPrimes(arrmdbp));
+        
+        int[] arrrsa = {1,2,3,4,5,6,7,8,9};
+        System.out.println("reverseSubArray: " + Arrays.toString(reverseSubArray(arrrsa, 3)));
+        
+        int[] s1 = {1,5,4,6,8,2};
+    	int[] s2 = {5,8,2,7};
+        System.out.println("findSubSet: " + Arrays.toString(findSubSet(s1, s2)));
+        
+        int[] arrmaztl = {0, 1, 1, 0, 0, 1, 0, 0, 1};
+        System.out.println("moveAllZeroToLeft: " +Arrays.toString(moveAllZeroToLeft(arrmaztl)));
+        
+        int [] arrCC = {1,1,1,0,0,3,4};
+        System.out.println("checkConsecutive: " + checkConsecutive(arrCC, 1));
+        
+         getPrimeNumberPairs(34);
+         
+         System.out.println("binaryToDecimal: "+ binaryToDecimal(101101));
+         
+         System.out.println("decimalToBinary: " + decimalToBinary(45));
+         
+         System.out.println("isPrefixOfWord: " + isPrefixOfWord("i love eating burger", "burg"));
+         
+         int [] arrre = {3,2,2,3};
+ 		 System.out.println("removeElement: " + removeElement(arrre, 3));
+ 		 
+ 		int[] dupArray2 = { 2, 9, 3, 4, 7, 3, 9, 55, 33, 44, 33, 20, 9 };
+		System.out.println("removeDupFromArray: " + Arrays.toString(removeDupFromArray(dupArray2)));
+		
+		String [] arrlcp = {"flower","flow","flight"};
+		System.out.println("longestCommonPrefix: "+ longestCommonPrefix(arrlcp));
+		
+		System.out.println("longestSubStringPalindrome: "+ longestPalindromeSubString("babad"));
+		
+		System.out.println(reverseWordWithoutUsingSplit("Jahangir hossain khan"));
+		
+		int [] arrmac = {1,8,6,2,5,4,8,3,7};
+		System.out.println("maxAreaOfContainer: " + maxAreaOfContainer(arrmac));
+		
+		int [] rearrangeAnArray = {2, 4, 3, 5, 1};
+		System.out.println("rearrangeAnArray: " + Arrays.toString(rearrangeAnArray(rearrangeAnArray)));
+		
+		int [] saseza = {4, 2, -3, 1, 6};
+		System.out.println("subArraySumEqualZero: " + subArraySumEqualZero(saseza));
+		
+		int [] fts = {1, 4, 20, 3,10, 5 };
+		System.out.println("findTargetedSum: " + findTargetedSum(fts, 33));
+	
+		int [] lolcs = {4,2,1,6,5,7};
+		System.out.println("lengthOfLongestConsecutiveSequence: " + lengthOfLongestConsecutiveSequence(lolcs));
+		
+		int [] arrSRSA = {2,3,4,5,6,7,8,0,1};
+		System.out.println("searchInRotatedSortedArray: " + searchInRotatedSortedArray(arrSRSA, 5));
+		
+		System.out.println("overrideAllDigitsWithFirstDigit: " + overrideAllDigitsWithFirstDigit(6789));
+		
+		int [] fpearr = {1,2,3,1};
+		System.out.println("findPeakElement: " + findPeakElement(fpearr));
+		
+		int [] lrarr = {1,2,3,4,5};		
+		System.out.println("leftRotation: " + Arrays.toString(leftRotation(lrarr, 2)));
+		
+		int [] mmarr = {1,2,3};
+		System.out.println("minimumMoves: " + minimumMoves(mmarr));
+		
+		
+		int [] arrts1 = {0,0,-5,30212};
+		int [] arrts2 = {-10,40,-3,9};
+		
+		System.out.println("sumOfTwoArrayEqualTarget: " + sumOfTwoArrayEqualTarget(arrts1, arrts2, -8));
+		
+		System.out.println("gettingFirstUniqeCharFromSting: " + gettingFirstUniqeCharFromSting("abacabad"));
+		
+		System.out.println("gettingFirstDuplicateCharFromSting: " + gettingFirstDuplicateCharFromSting("abacabad"));
+		
+		int [] arrsq = {-4,-1,0,3,10};
+		System.out.println("sortedSquares:" + Arrays.toString(sortedSquares(arrsq)));
+
+		System.out.println("isSubsequence: " + isSubsequence("abd", "ahbgdc"));
+		
+		System.out.println("climbStairs: " + climbStairs(4));
+		
+		System.out.println("isBalanced : " + isBalanced("[{()}]"));
+		
+		System.out.println("countingValleys: "+ countingValleys("DUDDUUUUDDD"));
+		
+		int [] smarr = {1,2,1,2,1,3,2};
+		System.out.println("sockMerchant: " + sockMerchant(smarr));
+		
+		
+		int [] arrmad = {3,-7,0};
+		System.out.println("minimumAbsoulteDifference: " + minimumAbsoulteDifference(arrmad));
+		
+		payChange(500, 25);
 
 	}
+	
+	public static void payChange(int paid, int cost) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		int rest = 0;
+		int change = paid - cost;
+		
+		int twenty = change / 20;
+		map.put("20", twenty);
+		rest = change % 20;
+		
+		int ten = rest / 10;
+		map.put("10", ten);
+		rest = rest % 10;
+		
+		int five = rest / 5;
+		map.put("5", five);
+		rest = rest % 5;
+		
+		int one = rest / 1;
+		map.put("1", one);
+		
+//		for(int m:map.values()) {
+//			System.out.println(m);
+//		}
+		for(Map.Entry<String, Integer> m : map.entrySet()) {
+			System.out.println(m.getKey() +" = "+ m.getValue());
+		}
+		
+	}
+	
+	//https://www.youtube.com/watch?v=cYelJ-lJyyY&list=PLU_sdQYzUj2nKXYskiYlKQIKknqu4H5ti&index=11
+	public static int minimumAbsoulteDifference(int [] arr) {
+		
+		int min_absolute_difference = Integer.MAX_VALUE;
+		Arrays.sort(arr);
+		for(int i = 0; i < arr.length-1; i++) {
+			int current_absoulte_value = Math.abs(arr[i] - arr[i+1]);
+			min_absolute_difference = Math.min(min_absolute_difference, current_absoulte_value);
+		}
+		return min_absolute_difference;
+	}
+	
+	//https://www.youtube.com/watch?v=HGgD8pgevc0&list=PLU_sdQYzUj2nKXYskiYlKQIKknqu4H5ti&index=8
+	public static int sockMerchant(int [] arr) {
+		
+		int count = 0;
+		
+		Set<Integer> set = new HashSet<Integer>();
+		
+		for(int i: arr) {
+			
+			if(!set.contains(i)) {
+				set.add(i);
+			}else {
+				set.remove(i);
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	//https://www.youtube.com/watch?v=MMmFELo0QjM
+	public static int countingValleys(String text) {
+		
+		int altitude = 0;
+		int max_valleys = 0;
+		for(int i = 0; i < text.length(); i++) {
+			if(text.charAt(i) == 'U') {
+				altitude++;
+				if(altitude == 0) {
+					max_valleys++;
+				}
+			}else {
+				altitude--;
+			}
+		}
+		return max_valleys;
+	}
+	
+	public static String isBalanced(String text) {
+		
+		Stack<Character> stack = new Stack<>();
+		for(int i = 0; i < text.length(); i++) {
+			if(text.charAt(i) == '(' || text.charAt(i) == '{' || text.charAt(i) == '[') {
+				stack.push(text.charAt(i));
+			}else {
+				if(stack.isEmpty()) {
+					return "NO";
+				}else {
+					char pop_val = stack.pop();
+					if(text.charAt(i)== ')' && pop_val != '(') {
+						return "NO";
+					}
+					else if(text.charAt(i)== '}' && pop_val != '{') {
+						return "NO";
+					}
+					else if(text.charAt(i)== ']' && pop_val != '[') {
+						return "NO";
+					}
+				}
+				
+			}
+		}
+		if(stack.isEmpty()) {
+			return "YES";
+		}else {
+			return "NO";
+		}
+	}
+	
+	
+	public static int climbStairs(int num) {
+		
+		int [] result = new int[num+1];
+		result[0] = 1;
+		result[1] = 1;
+		
+		for(int i = 2; i <= num; i++) {
+			
+			result[i] = result[i-1] + result[i-2];
+		}
+		return result[num];
+	}
+	
+	/**
+	 * Method name: isSubsequence
+	 * Method description: This method will check if second string contains first string
+	 * @param text1
+	 * @param text2
+	 * @return
+	 */
+	public static boolean isSubsequence(String text1, String text2) {		
+		Set<Character> set = new HashSet<>();	
+		for(char c: text2.toCharArray()) {
+			set.add(c);
+		}	
+		for(int i = 0; i < text1.length(); i++) {
+			
+			if(!set.contains(text1.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
+	/**
+	 * Method name: Given an array of integers A sorted in increasing order, 
+	 * return an array of the squares of each number, also in sorted increasing order.
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int [] sortedSquares(int [] arr) {
+		int start = 0;
+		int end = arr.length-1;
+		int c = arr.length-1;
+		int [] result = new int [arr.length];
+		while(start < end) {
+			
+			int startSq = arr[start] * arr[start];
+			int endSq = arr[end] * arr[end];
+			
+			if(startSq > endSq) {
+				result[c--] = startSq;
+				start++;
+			}else {
+				result[c--] = endSq;
+				end--;
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * Method name: gettingFirstDuplicateCharFromSting
+	 * Description: Get first duplicate char from string
+	 * @param text
+	 * @return
+	 */
+	
+	public static char gettingFirstDuplicateCharFromSting(String text) {
+		
+		for(int i = 0; i < text.length(); i++) {
+			
+			System.out.println(text.lastIndexOf(text.charAt(i)));
+			
+			if(text.indexOf(text.charAt(i)) != text.lastIndexOf(text.charAt(i))) {
+				
+				return text.charAt(i);
+			}
+		}
+		return '-';
+	}
+	/**
+	 * Method name: gettingFirstUniqeCharFromSting
+	 * Description: Get first unique char from string
+	 * @param text
+	 * @return
+	 */
+	
+	public static char gettingFirstUniqeCharFromSting(String text) {
+		
+		for(int i = 0; i < text.length(); i++) {
+	
+			if(text.indexOf(text.charAt(i)) == text.lastIndexOf(text.charAt(i))) {
+				
+				return text.charAt(i);
+			}
+		}
+		return '-';
+	}
+	
+	/**
+	 * Method name: sumOfTwoArrayEqualTarget
+	 * Description: Find the targeted sum from two different array
+	 * Link: https://www.youtube.com/watch?v=sfuZzBLPcx4&t=601s
+	 * @param arr1
+	 * @param arr2
+	 * @param target
+	 * @return
+	 */
+	
+	public static boolean sumOfTwoArrayEqualTarget(int [] arr1, int [] arr2, int target) {
+		
+		Set<Integer> set = new HashSet<Integer>();
+		for(int i : arr1) {
+			if(!set.contains(target-i)) {
+				set.add(target-i);
+			}
+		}
+		for(int j : arr2) {
+			if(set.contains(j)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Method name: minimumMoves
+	 * Description: Given an array with n positive integers. We need to find the minimum number of operation to make all elements equal.
+	 *  We can perform addition, multiplication, subtraction or division with any element on an array element.
+	 * @param arr
+	 * @return
+	 */
+	public static int minimumMoves(int [] arr) {
+		
+		int minmum = arr[0];
+		for(int i : arr) {		
+			minmum = Math.min(minmum, i);
+		}
+		
+		int res = 0;
+		for(int j : arr) {
+			res += j - minmum;
+		}
+		
+		return res;
+	}
+	
+	/**
+	 * Method name
+	 * method des: A left rotation operation on an array shifts each of the array's elements 1 unit to the left.
+	 *  For example, if 2  left rotations are performed on array [1 2 3 4 5], then the array would become [3 4 5 1 2]
+	 * @param arr
+	 * @param target
+	 * @return
+	 */
+	
+	public static int [] leftRotation(int [] arr, int target) {
+		
+		int [] rotatedArray = new int [arr.length];
+		int i = 0;
+		int j = arr.length-1;
+		int c = 0;
+		
+		while(c < arr.length) {			
+			if(target < arr[j]) {
+				rotatedArray[c++] = arr[target++];
+			}else {
+				rotatedArray[c++] = arr[i++];
+			}
+		}
+		return rotatedArray;
+	}
+	
+	//1,2,3,1
+	
+	public static int findPeakElement(int [] arr) {
+		
+		int start = 0;
+		int end = arr.length-1;
+		int mid = 0;
+		while(start < end) {
+			mid = (start+end)/2;
+			
+			if(arr[mid] < arr[mid+1]) {
+				start = mid+1;
+			}else {
+				end = mid;
+			}
+		}
+		return start;
+	}
+	
+//	Write a function called duplicates that has a single parameter that is a positive integer. It returns
+//	the integer obtained by changing all digits in the parameter to the first digit.
+//	Your function can return any result of your choice if it is given an illegal parameter value. Excessively long solutions
+//	
+	public static Integer overrideAllDigitsWithFirstDigit(int num) {
+		
+		int n = num;
+		int firstDigit = 0;
+		
+		while(n >= 10) {
+			n/=10;
+			firstDigit = n;
+		}
+		String add="";
+		while(num != 0) {
+			num/=10;
+			add += String.valueOf(firstDigit);
+		}
+		return Integer.valueOf(add);
+	}
+	
+	//Link: https://www.youtube.com/watch?v=oTfPJKGEHcc&t=77s
+	
+	public static int searchInRotatedSortedArray(int [] arr, int target) {
+		
+		int len = arr.length;
+		int right = 0;
+		int left = len-1;
+		int mid;
+		
+		while(right <= left) {
+			mid = (right + left)/2;
+			if(target == arr[mid]) {
+				return mid;
+			}else if(arr[mid] > arr[left]) {
+				
+				if(target <= arr[mid] && target >= arr[left]) {
+					left = mid - 1;
+				}else {
+					right = mid + 1;
+				}
+			}else {
+				
+				if(target >= arr[mid] && target <= arr[left]) {
+					right = mid + 1;
+				}else {
+					left = mid-1;
+				}
+			}
+		}
+		return -1;
+	}
+	
+	
+	/**
+	 * Method name: lengthOfLongestConsecutiveSequence
+	 * Method description: 
+	 * @param arr
+	 * @return
+	 */
+	//4,2,1,5,6
+	public static int lengthOfLongestConsecutiveSequence(int [] arr) {
+		
+		Set<Integer> set = new HashSet<Integer>();
+		for(int i : arr) {
+			set.add(i);
+		}
+		int max = 0;
+		int len = 0;
+		
+		for(int i: arr) {		
+			
+			if(!set.contains(i-1)) {
+				
+				while(set.contains(i)) {
+					i++;
+					len++;
+				}
+				max = Math.max(max , len);
+				len = 0;
+			}
+		}
+		return max;
+	}
+	
+	 /**
+	  * Method name: findTargetedSum
+	  * Method description: This method help to find the targeted sum 
+	  * @param arr
+	  * @param target
+	  * @return
+	  */
+	public static int findTargetedSum(int [] arr, int target) {	
+		int currentSum = 0;
+		int i = 0;
+		int j = 0;		
+		while(currentSum != target && currentSum < target) {
+			currentSum += arr[i];
+			i++;
+			if(currentSum == target) {
+				return currentSum;
+			}			
+		}		
+		while(currentSum != target) {
+			currentSum -= arr[j];
+			j++;
+			if(currentSum == target) {
+				return currentSum;
+			}			
+		}
+		return currentSum;
+	}
+	
+	/**
+	 * Method name: subArraySumEqualZero
+	 * Description: maximum subarray whose sum equals 0.
+	 * The method will check if sub array sum equal how many zero count.
+	 * 
+	 * @param arr
+	 * @return
+	 */
+	
+	//4 , 2, -3, 1, 6
+	
+	public static int subArraySumEqualZero(int [] arr) {
+		
+		int sum = 0;
+		int count = 0;
+		Set<Integer> set = new HashSet<Integer>();
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			sum += arr[i];
+			
+			if(arr[i] == 0 || sum == 0 || set.contains(sum)) {
+				count++;
+			}
+			
+			set.add(sum);
+		}
+		return count;
+	}
+	
+	/**
+	 * Method name: rearrangeAnArray description: Given an unsorted array, sort it
+	 * in such a way that the first element is the largest value, the second element
+	 * is the smallest, the third element is the second largest element and so on.
+	 * [2, 4, 3, 5, 1] -> [5, 1, 4, 2, 3]
+	 * 
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int[] rearrangeAnArray(int [] arr) {
+		
+		int [] newArray = new int [arr.length];
+		Arrays.sort(arr);
+		int point1 = 0;
+		int point2 = arr.length-1;
+		int index = 0;
+		
+		while(index < arr.length) {
+			
+			if(index != arr.length) {
+				newArray[index++] = arr[point2--];
+			}
+			if(index != arr.length) {
+				newArray[index++] = arr[point1++];
+			}
+		}
+		
+		return newArray;
+	}
+	
+	/**
+	 * Method name: reverseWordWithoutUsingSplit
+	 * Description: This method will reverse word without using spilt method
+	 * @param text
+	 * @return
+	 */
+	
+	public static String reverseWordWithoutUsingSplit(String text) {
+		if (text.isEmpty()) {
+			return null;
+		}
+		String result = "";
+		String temp = "";
+		char[] charArray = text.concat(" ").toCharArray();
+		for (int i = 0; i < charArray.length; i++) {
+			temp += charArray[i];
+			if (temp.endsWith(" ")) {
+				StringBuilder sb = new StringBuilder(temp);
+				sb.reverse();
+				result = result.trim() + sb;
+				temp = "";
+			}
+		}
+		return result;
+
+	}
+	
+	/**
+	 * Method name : maxAreaOfContainer
+	 * Method for: Dev Leet code (Medium)
+	 * @param s
+	 * @return
+	 */
+	
+	public static int maxAreaOfContainer(int [] heights) {		
+		int max = 0;
+		int left = 0;
+		int right = heights.length-1;
+		while(left < right) {
+			int minOfHeight = Math.min(heights[left], heights[right]);
+			int distance = right - left;
+			max = Math.max(max, minOfHeight*distance);
+			if(heights[left] < heights[right]) {
+				left++;
+			}else {
+				right--;
+			}
+		}
+		return max;
+	}
+	
+	/**
+	 * Method name : longestPalindromeSubString
+	 * Method for: Dev Leet code (Medium)
+	 * @param s
+	 * @return
+	 */
+	public static String longestPalindromeSubString(String s) {
+		String result = "";
+		int start = 0;
+		int end = 0;	
+		for(int i = 0; i < s.length(); i++) {
+			int len1 = expandFromMiddle(s, i, i);
+			int len2 = expandFromMiddle(s, i, i+1);
+			int len = Math.max(len1, len2);
+			if(len > end - start) {
+//				start = i - ((len-1)/2);
+//				end = i + (len/2);
+				
+				start = i - len/2;
+				end = len;
+			}
+		}
+//		result = s.substring(start, end+1);
+		result = s.substring(start, start+end);
+		return result;
+	}
+	
+	
+	public static int expandFromMiddle(String s, int left, int right) {
+		if(s == null) return 0;
+		while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+			left--;
+			right++;
+		}
+		return right - left -1;
+	}
+	
+	public static String longestCommonPrefix(String [] arr) {
+		String longestCommonPrefix = "";
+		int index = 0;
+		char [] c = arr[0].toCharArray();
+		for(int i = 0; i < c.length; i++) {
+			for(int j = 1; j < arr.length; j++) {
+				if(index >= arr[j].length() || c[i] != arr[j].charAt(index)){
+					return longestCommonPrefix;
+				}
+			}
+			longestCommonPrefix+=c[i];
+			index++;
+		}
+		return longestCommonPrefix;
+	}
+	
+	/**
+	 * Method Name: removeDupFromArray
+	 * Description: This method will will remove all duplicate value from arr 
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int [] removeDupFromArray(int [] arr) {		
+		Set<Integer> set = new HashSet<Integer>();
+		for(int i = 0; i < arr.length; i++) {
+			if(!set.contains(arr[i])) {
+				set.add(arr[i]);
+			}else {
+				arr[i] = 0;
+			}
+		}
+		return arr;
+	}
+	
+	/**
+	 * LeetCode 27
+	 * 
+	 * 	Method name :  Remove Element
+	 * Description: Given an array nums and a value val, remove all instances of that value
+	 *  in-place and return the new length.Do not allocate extra space for another array, you 
+	 *  must do this by modifying the input array in-place with O(1) extra memory.
+	 * @param arr
+	 * @param value
+	 * @return
+	 */
+	
+	public static int removeElement(int [] arr, int value) {
+		int len = 0;
+		int j = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] != value) {
+				arr[j] = arr[i];
+				len++;
+			}
+		}
+		return len;
+	}
+	 
+	  /*
+	   * Method name : isPrefixOfWord
+	   * Method description: Check If a Word Occurs As a Prefix of Any Word in a Sentence
+	   */
+	
+	public static String isPrefixOfWord(String text, String searchWord) {
+
+		String result = "";
+		String[] words = text.toLowerCase().split(" ");
+		for (int i = 0; i < words.length; i++) {
+			if (words[i].startsWith(searchWord)) {
+				result = words[i];
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 
+	 * @param num
+	 * @return
+	 */
+	
+	public static int decimalToBinary(int num) {
+		int binary = 0;
+		String value = "";
+		int reminder = 0;
+		while(num != 0) {
+			reminder = num % 2;
+			value = reminder + value;
+			num/=2;
+		}
+		binary = Integer.valueOf(value);
+		return binary;
+	}
+	
+	/**
+	 * Method name: binaryToDecimal
+	 * @param num
+	 * @return
+	 */
+	public static int binaryToDecimal(int num) {
+		int decimalNum = 0;
+		double pw = 0;
+		int reminder = 0;
+		int i = 0;
+		while(num != 0) {
+			reminder = num % 10;
+			System.out.println(Math.pow(2, i));
+			pw = reminder * Math.pow(2, i);
+			
+			decimalNum += pw; 
+			num/=10;
+			i++;
+		}
+		return decimalNum;
+	}
+	
+	
+	/*
+	 * Method Name: getPrimeNumberPairs
+	 * 
+	 */
+	public static void getPrimeNumberPairs(int num) {
+		
+		for(int i = 1; i <= num; i++) {
+			
+			if(isPrime(i)) {
+				
+				if(isPrime(num - i)) {
+					
+					System.out.println(i + " = " + (num-i));
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Method name: checkConsecutive
+	 * Description: Write a code to return a value 'True' if the number '1' throughout the array appears consecutively. Ex: S = {1,1,1,0,0,3,4}.
+	 * Else, return 'False' if the array does not have the given number (char = '1' in this case) in the consecutive order. Ex: S = {1,1,0,0,1,3,4}
+	 * @param arr
+	 * @param target
+	 * @return
+	 */
+	public static boolean checkConsecutive(int [] arr, int target) {
+		boolean result = true;
+		int count = 0;
+		int temp = 0;
+		
+		for(int i : arr) {
+			if(i == target) {
+				temp++;
+				if(temp > count) {
+					count = temp;
+				}else {
+					result = false;
+					break;
+				}
+			}else {
+				count = 0;
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * Method Name: moveAllZeroToLeft
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int[] moveAllZeroToLeft(int [] arr) {
+		int [] newArr = new int[arr.length];
+		int c = arr.length-1;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] >= 1) {
+				newArr[c--] = arr[i];
+			}
+		}
+		return newArr;
+	}
+	
+	/**
+	 * Method name: findSubSet
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	
+	private static int [] findSubSet(int[] s1, int[] s2) {
+		
+		int [] arr = {5,8};	
+		int c = 0;int d=0;	
+		int len = 0;		
+		if(s1.length > s2.length) {
+			len = s1.length;
+		}else {
+			len = s2.length;
+		}		
+		for(int i = 0; i < len; i++) {
+			
+			if(i < arr.length && i < s1.length && s1[i] == arr[c]) {
+				c++;				
+			}
+			if(i < arr.length && i < s2.length && s2[i] == arr[d]) {
+				d++;
+			}		
+		}
+		
+		if(c > d) {
+			return s1;
+		}else {
+			return s2;
+		}	
+	}
+	
+	/**
+	 * Method Name: Reverse sub array
+	 * @param arr
+	 * @param n
+	 * @return
+	 */
+	public static int [] reverseSubArray(int [] arr, int n) {
+		
+		for(int i = 0; i < arr.length; i = i + n) {
+			int left = i;
+			int right = i + n - 1;
+			while (left < right) {
+				int temp = arr[left];
+				arr[left] = arr[right];
+				arr[right] = temp;
+				left++;
+				right--;
+			}
+		}
+		return arr;
+	}
+	
+	/**
+	 * Method name: getMinDiffBetweenPrimes
+	 * You are given an array of integers. Find the minimum difference between two prime numbers(Positive or negative)
+	 *  in the array when present with minimum time complexity and provide the test data to test the this code.
+	 * @param arr
+	 * @return
+	 */
+	public static int getMinDiffBetweenPrimes(int [] arr) {
+		int min = 0;
+		TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+		for(int i = 0; i < arr.length; i++) {
+			if(isPrime(arr[i])) {
+				map.put(arr[i], 1);
+			}else {
+				map.put(arr[i], map.get(arr[i]+1));
+			}
+		}
+		min = map.firstKey().intValue() - map.lastKey().intValue();
+		return min;
+	}
+	
+	
+	/**
+	 * Method name: most con a particular number 
+	 * @param arr
+	 * @return
+	 */
+	
+	public static int mosConAParticularNum(int [] arr, int target) {
+		int count = 0;
+		int temp = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] == target) {
+				temp++;
+				if(temp > count) {
+					count = temp;
+				}
+			}else {
+				temp = 0;
+			}
+		}
+		return count;
+	}
+	
+	/**
+	 * Method name: margeArrayTo3rdArray
+	 * Description: Merge two sorted array Note: You are not allowed to merge two array then sort array
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	
+	public static int[] margeArrayTo3rdArray(int [] arr1, int [] arr2) {
+		int len = arr1.length + arr2.length;
+		int [] result = new int [len];
+		int idxArr1 = 0;
+		int idxArr2 = 0;
+		for(int i = 0; i < len; i++) {
+			if(idxArr1 == arr1.length) {
+				result[i] = arr2[idxArr2++];
+			}else if(idxArr2 == arr2.length) {
+				result[i] = arr1[idxArr1++];
+			}else if(arr1[idxArr1] < arr2[idxArr2]) {
+				result[i] = arr1[idxArr1++];
+			}else {
+				result[i] = arr2[idxArr2++];
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * Method name: notInCorrectPoint
+	 * Description: Method will check  how many integer not in correct position
+	 * @param list1
+	 * @return
+	 */
+	 public static int notInCorrectPoint(List<Integer> list1) {
+		   List<Integer> clone = new ArrayList<Integer>(list1);
+		   Collections.sort(list1);
+		   int count = 0;
+		   for(int i = 0; i < list1.size(); i++) {
+			   if(list1.get(i) != clone.get(i)) {
+				   count++;
+			   }
+		   }
+		   return count;
+	   }
+	
+	/**
+	 * Method name: largestSubString
+	 * @param text
+	 * @return
+	 */
+	
+	public static String largestSubString(String text) {
+    	String larg = ""; 
+    	String [] wordArray = text.replaceAll("[^a-zA-Z]"," ").split(" ");
+    	int curLen = 0;
+    	for(int i = 0; i < wordArray.length; i++) {
+    		if(wordArray[i].length() > curLen) {
+    			curLen = wordArray[i].length();
+    			larg = wordArray[i];
+    		}
+    		
+    	}
+    	
+    	return larg;
+    }
+	
+	/**
+	 * Method Name : mixString
+	 * Description: This method will add 1 char from one string another char from other string. That means mix string 
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static String mixString(String a, String b) {
+		String str = "";
+		int len = 0;
+		if(a.length() >= b.length()) {
+			len = a.length();
+		}else {
+			len = b.length();
+		}
+		for(int i = 0; i < len; i++) {
+			if(i < a.length()) {
+				str = str + a.charAt(i);
+			}
+			if(i < b.length()) {
+				str = str + b.charAt(i);
+			}
+		}
+		return str;
+	}
+	
+	/**
+	 * Method name: getAuthorAndBook
+	 * Description:You have been given a map which holds book name and book author. Oneauthor might have several different books.
+	    But books are unique. Now, write a function which will return you a Map which will have the author name as 
+	    unique and all the books he has written as values.
+	 * @param map
+	 * @return
+	 */
+	public static Map<String, List<String>> getAuthorAndBook(Map<String,String> map){
+		Map<String, List<String>> result = new HashMap<String, List<String>>();
+		List<String> John = new ArrayList<String>();
+		List<String> Rob = new ArrayList<String>();
+		
+		for(Map.Entry<String, String> m: map.entrySet()) {
+			if(m.getValue().equalsIgnoreCase("John")) {
+				John.add(m.getKey());
+				result.put("John", John);
+			}
+			if(m.getValue().equalsIgnoreCase("Rob")) {
+				Rob.add(m.getKey());
+				result.put("Rob", Rob);
+			}
+		}
+		return result;
+	}
+	
+	public static int[] sortPositiveNegative(int[] arr) {
+		Arrays.sort(arr);
+		int c = 0;
+		int [] result = new int [arr.length];
+		
+		for(int i = 0; i < arr.length; i++) {
+			
+			if(arr[i] < 0) {
+				result[c++] = arr[i];
+			}
+			if( arr[arr.length-1-i] >= 0) {
+				result[c++] = arr[arr.length-1-i];
+			}
+		}
+		return result;
+	}
+	
 	/**
 	 * MethodName: getArrayUnionstatus 
 	 * @param arr1
@@ -243,90 +1357,32 @@ public class PracticeMethods {
 	/**
 	 * Method name : longestContinuousIncreasingSubsequence
 	 * Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3. 
-                    Even though [1,3,5,7] is also an increasing subsequence, it's not a continuous one where 5 and 7 are separated by 4. 
+                    Even though [1,3,5,4,7] is also an increasing subsequence, it's not a continuous one where 5 and 7 are separated by 4. 
 	 * @param arr
 	 * @return
 	 */
 	
 	public static int longestContinuousIncreasingSubsequence(int[] arr) {
-		int longestOverAll = 0;
-		int longestTillNow = 1;
-		for (int i = 0; i < arr.length - 1; i++) {
-			if (arr[i] < arr[i + 1]) {
-				longestTillNow++;
-			} else {
-				if (longestTillNow > longestOverAll) {
-					longestOverAll = longestTillNow;
+		int temp = 1;
+		int count = 0;
+		
+		for(int i = 0; i < arr.length-1; i++) {
+			if(arr[i] < arr[i+1]) {
+				temp++;
+				if(temp>count) {
+					count = temp;
 				}
-				longestTillNow = 1;
+			}else {
+				temp = 1;
 			}
 		}
-		if (longestOverAll == 0) {
-			longestOverAll = longestTillNow;
-		}
-		return longestOverAll;
+		return count;
 	}
-
 	/*
 	 * Method name: sortestWordDistance
 	 * Description: This method will help to find the shortest distance between two word
 	 * 
 	 */
-	
-	public static int minmumWordDis(String text, String str1, String str2) {
-		String [] words = text.split(" ");
-		int minDis = 0;
-		int p1 = 0;
-		int p2 = 0;
-		
-		for(int i = 0; i < words.length; i++) {
-			if(words[i].equalsIgnoreCase(str1)) {
-				p1 = i;
-			}
-			if(words[i].equalsIgnoreCase(str2)) {
-				p2 = i;
-			}
-			
-		}
-		
-		 if(p1 > p2) {
-	        	minDis = p1 - p2;
-	        }else if(p2 > p1) {
-	        	minDis = p2- p1;
-	        }
-		return minDis;
-	}
-	
-	public static int sortestWordDistance(String text, String str1, String str2) {
-		int sortestDis = 0;
-		int index1 = 0;
-		int index2 = 0;
-		String [] wordArray = text.split(" ");
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		for(int i = 0; i < wordArray.length; i++) {
-			if(!map.containsKey(wordArray[i])) {
-				map.put(wordArray[i], 1);
-				if(wordArray[i].equalsIgnoreCase(str1)) {
-					index1 = i+1;
-				}else if(wordArray[i].equalsIgnoreCase(str2)) {
-					index2 = i+1;
-					break;
-				}
-			}else {
-				map.put(wordArray[i], map.get(wordArray[i])+1);
-				if(wordArray[i].equalsIgnoreCase(str2)) {
-					index2 = i+1;
-				}
-			}
-		}
-		sortestDis = index2 - index1;
-		//if index 2 smaller that index1 then below code will run
-		if(sortestDis < 0) {
-			sortestDis = index1 - index2;
-		}
-		
-		return sortestDis;
-	}
 	
 	
 	/**
@@ -341,15 +1397,13 @@ public class PracticeMethods {
 		for (int i = 0; i < arr.length - 1; i++) {
 			if (arr[i] == arr[i + 1]) {
 				currCount++;
-			} else {
 				if (currCount > count) {
 					count = currCount;					
 				}
+			} else {
 				currCount = 1;
 			}
-		}
-		if(currCount > count) {
-			count = currCount;
+		
 		}
 		return count;
 	}
@@ -416,10 +1470,10 @@ public class PracticeMethods {
 		String encrypted = "";
 		for(int i = 0; i < text.length(); i++) {
 			int position = value.indexOf(text.charAt(i));
-			if(position != -1) {
+			
 				char c = key.charAt(position);
 				encrypted = encrypted + c;
-			}
+			
 		}
 		return encrypted;
 		
@@ -721,26 +1775,25 @@ public class PracticeMethods {
 	 * @return
 	 */
 
-	public static char maximumConsecutiveRepeatingCharacter(String text) {
-		char result = 0;
-		int charCount = 1;
+	public static int maximumConsecutiveRepeatingCharacter(String text) {
+		int temp = 1;
 		int count = 0;
-		for (int i = 0; i < text.length(); i++) {
-			if (i < text.length() - 1 && text.charAt(i) == text.charAt(i + 1)) {
-				charCount++;
-
-			} else {
-				if (charCount > count) {
-					count = charCount;
-					result = text.charAt(i);
-
+		char [] arr = text.toCharArray();
+		for(int i = 0; i < arr.length-1; i++) {
+			
+			if(arr[i] == arr[i+1]) {				
+				temp++;
+				if(temp > count) {
+					count = temp;
 				}
-				charCount = 1;
+			}else {
+				temp = 1;
 			}
 		}
-
-		return result;
-	}
+		return count;
+		
+	
+		}
 
 	/**
 	 * Method name : mostCommonCharInString Description: This method will help to
@@ -976,23 +2029,51 @@ public class PracticeMethods {
 	 */
 
 	public static int[] largestProductOfTwoConsecutiveElements(int[] arr) {
-		int[] result = new int[2];
-		Arrays.sort(arr);
-		int maxNum = arr[0] * arr[1];
-		int indexOne = 0;
-		int indexTwo = 0;
-		for (int i = 0; i < arr.length - 1; i++) {
-			if (maxNum < arr[i] * arr[i + 1]) {
-				maxNum = arr[i] * arr[i + 1];
-				result[0] = arr[i];
-				result[1] = arr[i + 1];
-			} else {
-				result[0] = arr[indexOne];
-				result[1] = arr[indexTwo + 1];
+//		int[] result = new int[2];
+//		Arrays.sort(arr);
+//		int maxNum = arr[0] * arr[1];
+//		int indexOne = 0;
+//		int indexTwo = 0;
+//		for (int i = 0; i < arr.length - 1; i++) {
+//			if (maxNum < arr[i] * arr[i + 1]) {
+//				maxNum = arr[i] * arr[i + 1];
+//				result[0] = arr[i];
+//				result[1] = arr[i + 1];
+//			} else {
+//				result[0] = arr[indexOne];
+//				result[1] = arr[indexTwo + 1];
+//
+//			}
+//		}
 
+//		return result;
+		
+		int [] result = new int [2];	
+		int max1 = arr[0], max2 = Integer.MIN_VALUE;
+		int min1 = arr[0], min2 = Integer.MAX_VALUE;	
+		for(int i = 0; i < arr.length; i++) {	
+			if(arr[i] > max1) {
+				max2= max1;
+				max1 = arr[i];
 			}
+			else if(arr[i] > max2) {
+				max2 = arr[i];
+			}			
+			if(arr[i] < min1) {
+				min2= min1;
+				min1 = arr[i];
+			}
+			else if(arr[i] < min2) {
+				min2 = arr[i];
+			}		
+		}		
+		if(max1 * max2 > min1* min2) {
+			result[0] = max1;
+			result[1] = max2;
+		}else {
+			result[0] = min1;
+			result[1] = min2;
 		}
-
 		return result;
 	}
 
@@ -1004,32 +2085,23 @@ public class PracticeMethods {
 	 * @return
 	 */
 
-	public static int getNearestPalindrome(int number) {
-		@SuppressWarnings("unused")
-		int nearestPalindrome = 0;
-		int increase = 0;
-		int decrecase = 0;
-		while (true) {
-			increase = increase + 1;
-			int num1 = number + increase;
-			if (reverseIntFGNP(num1) == true) {
-				return nearestPalindrome = num1;
+	public static int getNearestPalindrome(int num) {
+		int a = 0;		
+		while(true) {
+			a += 1;
+			int decrease = num - a;
+			int increase = num + a;
+			if(isPalindromeFNG(increase)) {
+				return increase;
+			}else if(isPalindromeFNG(decrease)){
+				return decrease;
 			}
-
-			else if (reverseIntFGNP(num1) == false) {
-				decrecase = decrecase + 1;
-				int num2 = number - decrecase;
-				if (reverseIntFGNP(num2) == true) {
-					return nearestPalindrome = num2;
-
-				}
-			}
+			
 		}
-
 	}
 
 	// This method is used for getNearestPalindrome
-	public static boolean reverseIntFGNP(int num) {
+	public static boolean isPalindromeFNG(int num) {
 		boolean result = false;
 		int input = num;
 		int reverse = 0;
@@ -1146,20 +2218,18 @@ public class PracticeMethods {
 	 */
 
 	public static int[] moveDuplicateToAnArray(int[] arr) {
-		HashSet<Integer> set = new HashSet<Integer>();
-		List<Integer> list = new ArrayList<Integer>();
-		for (int i : arr) {
-			if (!set.contains(i)) {
-				set.add(i);
-			} else {
-				list.add(i);
+		int j = 0;
+		int [] temp = new int[arr.length];
+
+		for(int i = 0; i < arr.length-1; i++) {
+			if(arr[i] != arr[i+1]) {
+				temp[j] = arr[i];
+				j++;
 			}
+
 		}
-		int[] dupValuArray = new int[list.size()];
-		for (int i = 0; i < list.size(); i++) {
-			dupValuArray[i] = list.get(i);
-		}
-		return dupValuArray;
+		temp[j] = arr[arr.length-1];				
+		return temp;
 	}
 
 	/**
@@ -1524,7 +2594,8 @@ public class PracticeMethods {
 	 * @return
 	 */
 
-	public static int getMinDistance(int[] arr) {
+	public static int getMinDistance(int[] arr) { // 7,2,8,4,6 //2,4,6,7,9
+
 		
 //		int [] a = new int [2];
 //	       int indexOne = 0;
@@ -1571,7 +2642,7 @@ public class PracticeMethods {
 	 * @return
 	 */
 
-	public static boolean getPerfectNum(int num) {
+	public static boolean isPerfectNum(int num) {
 		boolean result = false;
 
 		int perfectNum = 0;
@@ -1672,14 +2743,12 @@ public class PracticeMethods {
 		int expactedValue = numArray.length + 1;
 		int totalSum = expactedValue * (expactedValue + 1) / 2; // It is a generic formula of total sum (total +
 																// increment)
-
 		int sum = 0;
 		for (int i = 0; i < numArray.length; i++) {
 			sum = sum + numArray[i];
 		}
 
 		missingValue = totalSum - sum;
-
 		return missingValue;
 	}
 
@@ -1861,14 +2930,14 @@ public class PracticeMethods {
 	}
 
 	/**
-	 * Method:getPrimeFactor What is prime factrization:
+	 * Method:getPrimeFactor What is prime factorization:
 	 * https://www.khanacademy.org/math/pre-algebra/pre-algebra-factors-multiples/pre-algebra-prime-factorization-prealg/v/prime-factorization-exercise
 	 * 
 	 * @param number
 	 * @return
 	 */
 
-	public static ArrayList<Integer> getPrimeFactor(int number) {
+	public static ArrayList<Integer> getPrimefactorization(int number) {
 		ArrayList<Integer> primeFactor = new ArrayList<Integer>();
 
 		for (int i = 2; i <= number; i++) {
@@ -1927,17 +2996,13 @@ public class PracticeMethods {
 	 */
 
 	public static boolean isPrime(int num) {
-		boolean result = true;
-
-		for (int i = 2; i < num; i++) {
-			if (num % i == 0) {
-				result = false;
-			} else {
-				return result;
-			}
-		}
-
-		return result;
+	
+	    for(int i=2;i<num;i++) {
+	        if(num%i==0)
+	            return false;
+	    }
+	    return true;
+		
 	}
 
 //	public static boolean isPrime(int num) {
@@ -2082,7 +3147,6 @@ public class PracticeMethods {
 
 	public static int getDuplicateCount(String text) {
 		int numCount = 0;
-
 		Set<Character> uniqueChars = new HashSet<Character>();
 		Set<Character> repeats = new HashSet<Character>();
 
